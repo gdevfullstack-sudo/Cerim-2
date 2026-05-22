@@ -108,292 +108,354 @@
 <div class="flex justify-between items-center w-full px-6 py-4 max-w-[1280px] mx-auto">
 <a href="index-new.html" class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white" style="text-decoration:none;">Cerim.cg</a>
 <div class="hidden md:flex gap-8 items-center">
-<a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="index-new.html">Accueil</a>
-<a class="font-manrope text-sm font-bold tracking-tight text-emerald-700 pb-1 border-b-2 border-emerald-700" href="galerie.html">Galerie</a>
+<a class="font-manrope text-sm font-bold tracking-tight text-emerald-700 pb-1 border-b-2 border-emerald-700" href="index-new.html">Accueil</a>
+<a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="galerie.html">Galerie</a>
+<a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="panier.html">Panier</a>
 <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="#">À propos</a>
 <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="contact.html">Contact</a>
 </div>
-<button class="bg-[#051d33] text-white px-6 py-2.5 rounded-full font-manrope text-sm font-bold active:scale-95 transition-transform">Publier un bien</button>
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-full font-manrope text-sm font-bold active:scale-95 transition-transform">Publier un bien</button>
 </div>
 </nav>
-
-<!-- Main Area -->
-<main class="pt-[80px]">
-    
-    <!-- ==================== PROPERTY DETAILS VIEW ==================== -->
-    <div id="details-view" class="page-transition animate-fade-in block">
-        <!-- Asymmetric Image Grid Container -->
-        <section class="max-w-[1280px] mx-auto px-6 md:px-8 pt-8 pb-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-3.5" id="gallery-container">
-                <!-- Large Vertical Image -->
-                <div class="md:col-span-2 relative h-[300px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm group bg-slate-100 dark:bg-slate-950">
-                    <img id="main-gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_ZfuauCTpakVuNXfyPzaG3sFPC5ly66jbZfKBdeWwHoq1U9WNzsUUUnzEOC8zURrZw-emrG6tufWDivTQjqzPCSRD-MK2054e5emFMsguTaOdMW0c4ixtR8zjuRSA43TrO24SnAPRNkxkqWnuPepyVuf8nwTsfItf6i9j6l1np-5ICEbQPapuBa28PXRLcX7B0Zu_MMfvPTwee-osSeGhvK-Dbntdv_ZQ5KciTI0LqLUzWm1C3CiTCx4pmMwJEMf7OYHrVu5sCDY" alt="Villa Lumière Brazzaville" class="w-full h-full object-cover transition-transform duration-700 cursor-zoom-in hover:scale-105" onclick="openLightbox(0)" />
-                    <!-- Listing Premium Badge -->
-                    <div class="absolute bottom-6 left-6 bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2 shadow-sm text-primary dark:text-white font-extrabold text-[10px] uppercase tracking-widest">
-                        <span class="material-symbols-outlined text-[15px] text-secondary">verified</span>
-                        Premium Listing
-                    </div>
-                </div>
-                
-                <!-- Stacked Left Sub-Column (Living & Kitchen) -->
-                <div class="flex flex-col gap-3.5 h-[300px] md:h-[450px]">
-                    <div class="flex-1 relative rounded-3xl overflow-hidden shadow-sm bg-slate-100 dark:bg-slate-950">
-                        <img id="gallery-sub-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHYlbOhCzS67t1EvfPZns0odDdslV3Sku8czBstjTsC8De7iGnfcGx9RStiiuaRJ1JgOgxSBC0qmqDHteqJikrtKmsmKOqbY3lZ7zS3MTDyi71pAAgwkKUz6QohUl0OOdOshvoYHH6GsPEE0WMRynQPrvP8lNJRbJQpsYNsyLTHuNcjZHFDFCuIE4qXiRibp-zgRfp9v5cyJ4Ja9yByLAPQtIYJnAHuwRzPqiXHEWqGH7J4Zzb6RBv1lqAN0ZXoEnwwlHdZ5s3Y" alt="Interior view" class="w-full h-full object-cover transition-transform duration-700 cursor-zoom-in hover:scale-105" onclick="openLightbox(1)" />
-                    </div>
-                    <div class="flex-1 relative rounded-3xl overflow-hidden shadow-sm bg-slate-100 dark:bg-slate-950">
-                        <img id="gallery-sub-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9XTMAbEUfZx4lflQFMMzE76iRxNQK5wf4gR5n5rraknK8PNuiiPXwzlOXdFSV4ob88YEtU97Djv-IGRd3eIrpYOips8tHcF9aQfc9imG8j5hS5u0BaYmrcPccbT-Yk7GxG-yY3FHRB45T26ke2oRn5DnLtIE_SMFeJG0qYMQz8Tgaav1gmkhlRFbgpiBtSzeSTRMZ_jvZNfP6qD1YtngkTKQTix7ma3YV0omdGsP-NfqHtATMAK2jrtWqokCFOOV5RrdHK8-0dsk" alt="Kitchen view" class="w-full h-full object-cover transition-transform duration-700 cursor-zoom-in hover:scale-105" onclick="openLightbox(2)" />
-                    </div>
-                </div>
-                
-                <!-- Tall Bed Photo Column -->
-                <div class="relative h-[300px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm bg-slate-100 dark:bg-slate-950">
-                    <img id="gallery-sub-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLzUHjmTYq6VAdATAouVdkuB7lh9ISshXMBTyEvjkW06ljEmPBGwvTZ--hCwvI5WrKF0WQk5DshOzmzahvOYO1iv-86C30wJYShX4Pu9Tw2-dgT964X7fFXQI1Vs2bndwtLTD5sBdw6UNc4XTRlkkwp3PuW8-7JdRIBXL3GEIv0u07wCyeya92Zg5521_a1sJKVk2ychAoMe42GwCIRA_Nflyr0O9sGbzRXAUNhkS6XABVqyZ3o-0_-s2kg-nTPemwY7Kc_lbbv1M" alt="Bedroom Cozy view" class="w-full h-full object-cover transition-transform duration-700 cursor-zoom-in hover:scale-105 filter grayscale-[20%]" onclick="openLightbox(3)" />
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Details Main Layout (Left Content, Right Sticky Sidebar) -->
-        <section class="max-w-[1280px] mx-auto px-6 md:px-8 py-6">
-            <div class="flex flex-col lg:flex-row gap-8 items-start">
-                
-                <!-- LEFT CONTENT AREA (Title, specs, description, amenities) -->
-                <div class="flex-1 space-y-8 w-full">
-                    <!-- Title block -->
-                    <div class="space-y-4">
-                        <div class="flex gap-2 items-center flex-wrap">
-                            <span class="border border-slate-200 dark:border-slate-800 bg-slate-100/35 dark:bg-slate-850 px-3.5 py-1.5 rounded-full text-[10px] font-black tracking-widest text-[#356665] dark:text-[#619290] uppercase" id="detail-tag-status">FOR SALE</span>
-                            <span class="bg-slate-100 dark:bg-slate-800 px-3.5 py-1.5 rounded-full text-[10px] font-black tracking-widest text-slate-500 dark:text-slate-400 uppercase" id="detail-tag-district">OUENZÉ DISTRICT</span>
-                        </div>
-                        <h1 id="detail-title" class="text-3xl md:text-4xl font-extrabold tracking-tight text-primary dark:text-white leading-tight">
-                            Villa Lumière Brazzaville
-                        </h1>
-                        <p id="detail-loc" class="flex items-center gap-1.5 text-xs text-slate-450 dark:text-slate-400 font-bold uppercase tracking-widest">
-                            <span class="material-symbols-outlined text-[17px] text-secondary">location_on</span>
-                            Quartier Résidentiel, Brazzaville, Republic of the Congo
-                        </p>
-                    </div>
-
-                    <!-- Horizontal specs card -->
-                    <div class="bg-white dark:bg-slate-900 border border-slate-150/80 dark:border-slate-800 rounded-2xl p-4 shadow-[0px_4px_20px_rgba(0,0,0,0.01)] flex flex-wrap gap-4 items-center justify-between text-center transition-colors">
-                        <div class="flex-1 min-w-[90px] border-r border-slate-100 dark:border-slate-800 last:border-none p-1">
-                            <span class="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest block mb-1">Bedrooms</span>
-                            <div class="flex items-center justify-center gap-1.5 text-primary dark:text-white font-extrabold text-base">
-                                <span class="material-symbols-outlined text-[17px] text-slate-400">bed</span>
-                                <span id="spec-beds">05</span>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-[90px] border-r border-slate-100 dark:border-slate-800 last:border-none p-1">
-                            <span class="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest block mb-1">Bathrooms</span>
-                            <div class="flex items-center justify-center gap-1.5 text-primary dark:text-white font-extrabold text-base">
-                                <span class="material-symbols-outlined text-[17px] text-slate-400">bathtub</span>
-                                <span id="spec-baths">04</span>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-[90px] border-r border-slate-100 dark:border-slate-800 last:border-none p-1">
-                            <span class="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest block mb-1">Area</span>
-                            <div class="flex items-center justify-center gap-1.5 text-primary dark:text-white font-extrabold text-base">
-                                <span class="material-symbols-outlined text-[17px] text-slate-400">square_foot</span>
-                                <span id="spec-size">450m²</span>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-[90px] last:border-none p-1">
-                            <span class="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest block mb-1">Parking</span>
-                            <div class="flex items-center justify-center gap-1.5 text-primary dark:text-white font-extrabold text-base">
-                                <span class="material-symbols-outlined text-[17px] text-slate-400">garage</span>
-                                <span id="spec-parking">02</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Property Overview Text -->
-                    <div class="space-y-4 pt-4 border-t border-slate-150 dark:border-slate-800">
-                        <h2 class="text-lg font-extrabold text-primary dark:text-white tracking-tight">Property Overview</h2>
-                        <div id="detail-overview-p" class="text-slate-600 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed space-y-4">
-                            <p>Discover an unparalleled living experience in the heart of Brazzaville. Villa Lumière represents the pinnacle of modern Congolese architecture, blending sustainable design with international luxury standards. Every square meter of this property has been meticulously crafted to capture the soft equatorial light while maintaining natural thermal comfort.</p>
-                            <p>The open-plan living area features bespoke Congolese teak cabinetry and flows seamlessly onto a wrap-around terrace. The infinity pool overlooks the lush urban landscape, providing a serene escape from the city's vibrant energy. With 24/7 solar backup, advanced water filtration, and a state-of-the-art security system, this villa offers absolute peace of mind.</p>
-                        </div>
-                    </div>
-
-                    <!-- Premium Amenities Grid -->
-                    <div class="space-y-4 pt-6 border-t border-slate-150 dark:border-slate-800">
-                        <h2 class="text-lg font-extrabold text-primary dark:text-white tracking-tight">Premium Amenities</h2>
-                        <div id="amenities-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm font-bold text-slate-600 dark:text-slate-350">
-                            <!-- Injected dynamically -->
-                            <div class="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-2xl">
-                                <span class="w-8 h-8 rounded-full bg-[#356665]/10 text-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">pool</span></span>
-                                <span>Private Infinity Pool</span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-2xl">
-                                <span class="w-8 h-8 rounded-full bg-[#356665]/10 text-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">solar_power</span></span>
-                                <span>Solar Power Infrastructure</span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-2xl">
-                                <span class="w-8 h-8 rounded-full bg-[#356665]/10 text-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">shield_lock</span></span>
-                                <span>Smart Security Mesh</span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-2xl">
-                                <span class="w-8 h-8 rounded-full bg-[#356665]/10 text-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">wine_bar</span></span>
-                                <span>Temperature-Controlled Cellar</span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-2xl">
-                                <span class="w-8 h-8 rounded-full bg-[#356665]/10 text-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">park</span></span>
-                                <span>Tropical Zen Garden</span>
-                            </div>
-                            <div class="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-2xl">
-                                <span class="w-8 h-8 rounded-full bg-[#356665]/10 text-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">room_service</span></span>
-                                <span>Staff Quarters & Service Area</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RIGHT SIDEBAR (Pricing, Actions, Agent details, map) -->
-                <div class="w-full lg:w-[380px] space-y-6 lg:sticky lg:top-[90px] shrink-0">
-                    
-                    <!-- Offering Price & Action Card -->
-                    <div class="bg-white dark:bg-slate-900 border border-slate-150/80 dark:border-slate-800 rounded-3xl p-6 shadow-[0px_10px_30px_rgba(0,23,45,0.02)] transition-colors">
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Offering Price</span>
-                                <h3 id="sidebar-price" class="text-3xl font-extrabold text-primary dark:text-white tracking-tight">450M FCFA</h3>
-                                <span id="sidebar-converted-price" class="text-[11px] font-bold text-slate-400 mt-0.5 block">≈ $745,000 USD</span>
-                            </div>
-                            
-                            <!-- Favorite Toggle Button -->
-                            <button id="sidebar-fav-btn" class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-[#ba1a1a] flex items-center justify-center active:scale-90 transition-all cursor-pointer">
-                                <span class="material-symbols-outlined text-[19px]">favorite</span>
-                            </button>
-                        </div>
-                        
-                        <!-- Agent profile Card info -->
-                        <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100/50 dark:border-slate-800 p-4 rounded-2xl flex items-center gap-3 mb-6 transition-colors">
-                            <img id="agent-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nqWzA1XABnspQyZQOHoriLrSbEk4wyPSttoPhmxWKVFuVqx99VVM35TFC7EFFDLvdLbZBdTq9JJqYURwzPcmG-ekFxU8mrKfPS8EJbK7CgvPFtMy66b2Np66jBhDXEjDUSX1hAypaEAsGqXZgvksMRCo0UEO4przphMiFbiUXPxOc3ZtTZbPsfTGe7lqB87F1pRflg9T-xtBSv-FGCzSuoDa32v4b8Jkb0QoLXYfQmzkVekrkgA5kXl1Q1JWSOptIxJWQ9W1GI" alt="Agent" class="w-11 h-11 rounded-full object-cover border-2 border-white dark:border-slate-850" />
-                            <div>
-                                <h4 id="agent-name" class="text-xs font-black text-primary dark:text-white">Jean-Pierre Mobiala</h4>
-                                <span id="agent-title" class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-0.5">Senior Portfolio Manager</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Side buttons actions -->
-                        <div class="space-y-2.5">
-                            <button id="tour-request-trigger" class="w-full py-3.5 bg-primary dark:bg-secondary hover:bg-secondary dark:hover:bg-accent text-white rounded-full text-xs font-extrabold uppercase tracking-widest transition-all flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] cursor-pointer">
-                                <span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                                Request Private Tour
-                            </button>
-                            <button id="agent-whatsapp-trigger" class="w-full py-3.5 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/20 rounded-full text-xs font-extrabold uppercase tracking-widest transition-all flex items-center justify-center gap-1.5 active:scale-[0.98] cursor-pointer">
-                                <span class="material-symbols-outlined text-[17px]">chat</span>
-                                WhatsApp Agent
-                            </button>
-                        </div>
-
-                        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-850 flex items-center justify-center gap-1 text-[9px] font-black text-slate-400 uppercase tracking-widest">
-                            <span class="material-symbols-outlined text-xs text-secondary">verified_user</span>
-                            Verified by Cerim.cg Architecture Standards
-                        </div>
-                    </div>
-                    
-                    <!-- Location Map Placeholder Card -->
-                    <div class="bg-white dark:bg-slate-900 border border-slate-150/80 dark:border-slate-800 rounded-3xl p-6 shadow-[0px_10px_30px_rgba(0,23,45,0.02)] transition-colors space-y-4">
-                        <h3 class="text-sm font-extrabold text-primary dark:text-white tracking-tight">Location</h3>
-                        
-                        <!-- Map SVG mock -->
-                        <div class="relative bg-slate-100 dark:bg-slate-850 rounded-2xl h-48 overflow-hidden flex items-center justify-center border border-slate-200 dark:border-slate-800 transition-colors shadow-inner">
-                            <!-- Minimalist Map Grid SVG -->
-                            <svg class="absolute inset-0 w-full h-full opacity-10 dark:opacity-5 text-slate-900 dark:text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <path d="M0,20 L100,20 M0,50 L100,50 M0,80 L100,80 M20,0 L20,100 M50,0 L50,100 M80,0 L80,100" stroke-width="0.5"/>
-                            </svg>
-                            <!-- Styled Map Clouds -->
-                            <div class="absolute top-4 left-6 text-slate-300 dark:text-slate-700 map-cloud">
-                                <span class="material-symbols-outlined text-2xl">cloud</span>
-                            </div>
-                            <div class="absolute top-8 right-8 text-slate-350 dark:text-slate-650 map-cloud" style="animation-delay: 2s;">
-                                <span class="material-symbols-outlined text-xl">cloud</span>
-                            </div>
-                            
-                            <!-- Central Pin container -->
-                            <div class="relative flex flex-col items-center group cursor-pointer z-10">
-                                <!-- Pin light pulse -->
-                                <span class="absolute -top-1 w-6 h-6 bg-[#356665]/20 rounded-full animate-ping"></span>
-                                <!-- Pin Icon -->
-                                <span class="material-symbols-outlined text-4xl text-[#356665] dark:text-[#619290] filter drop-shadow">location_on</span>
-                                <!-- Badge "SAFE DESIGN WORK" matching image -->
-                                <div class="mt-2 bg-primary text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-md select-none border border-slate-850">
-                                    Safe Sign Work
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Distance Indicators with compass plane -->
-                        <div class="space-y-3 pt-2">
-                            <div class="flex items-center gap-3 text-xs font-semibold text-slate-600 dark:text-slate-400">
-                                <span class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[#356665] text-[16px]">explore</span></span>
-                                <span id="dist-downtown">5 mins to Downtown Brazzaville</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-xs font-semibold text-slate-600 dark:text-slate-400">
-                                <span class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[#356665] text-[16px]">flight</span></span>
-                                <span id="dist-airport">20 mins to Maya-Maya Airport</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <!-- "More Like This" Grid Section (Discover bottom) -->
-        <section class="border-t border-slate-150 dark:border-slate-850 bg-white/40 dark:bg-[#0f1319]/20 transition-colors py-16 px-6 md:px-8">
-            <div class="max-w-[1280px] mx-auto space-y-8">
-                <!-- Section Header -->
-                <div class="flex justify-between items-end">
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#356665] dark:text-[#619290] block">Discover</span>
-                        <h2 class="text-2xl font-extrabold text-primary dark:text-white tracking-tight">More Like This</h2>
-                    </div>
-                    <a href="#" onclick="showListView(); return false;" class="text-xs font-bold text-[#356665] hover:text-[#619290] dark:text-[#619290] hover:underline flex items-center gap-1 uppercase tracking-wider">
-                        View all properties
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
-                </div>
-
-                <!-- 3 Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="more-like-this-grid">
-                    <!-- Cards injected via JS -->
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PROPERTY GALLERY / LISTINGS GRID VIEW ==================== -->
-    <div id="list-view" class="page-transition hidden max-w-[1280px] mx-auto px-6 md:px-8 py-8 space-y-6">
-        <!-- Title and Category Pills -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div>
-                <h2 class="text-2xl font-extrabold text-primary dark:text-white">Explorateur Immobilier</h2>
-                <p class="text-xs text-slate-450 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">Cerin.cg — Excellence et Transparence au Congo</p>
-            </div>
-            
-            <!-- Category selections -->
-            <div class="flex gap-2">
-                <button onclick="setListCategory('')" class="cat-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-slate-200 dark:border-slate-800 bg-primary text-white" data-cat="">Tous</button>
-                <button onclick="setListCategory('villa')" class="cat-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 hover:border-primary" data-cat="villa">Villas</button>
-                <button onclick="setListCategory('appartement')" class="cat-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 hover:border-primary" data-cat="appartement">Appartements</button>
-            </div>
-        </div>
-
-        <!-- Filter counters -->
-        <div class="text-xs font-bold text-slate-450 uppercase tracking-widest flex justify-between">
-            <span id="list-results-counter">6 Résidences Disponibles</span>
-        </div>
-
-        <!-- Comprehensive List Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="list-view-grid">
-            <!-- Dynamic Grid elements -->
-        </div>
-    </div>
-    
-</main>
-
-<!-- Pied de Page (Footer) -->
+<!-- Hero Section -->
+<section class="relative h-[921px] min-h-[700px] flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" alt="Ultra-modern luxury villa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnhu4UZbVVJVBJiwZhvvLnvVcw4beaXAnN2V3C4nMiWNwc87a3ve1lpPzM2tri076cI1tfdjJNkX9bwWfUEGWVrfJ7O2rohWGe5_-Q77ZAG4nZjX8T1G4_34vGLyJlBdGqsPTrp6NdlLKGQmAKF-FduixjE9ntVjwClGdVBWcHXFnpjOmnUgh128F_lGnrjFdDqspZU94n6nmUFXmP_FKjiTYro613kjVjMUgJf0GRzqV2z8nXD_FkvjBPPX8IetQA20C-sJfdcr8"/>
+<div class="absolute inset-0 bg-slate-950/40 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl">
+<h1 class="font-h1 text-h1 text-white mb-6">Trouvez votre espace idéal au Congo</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-12 max-w-2xl mx-auto">Achetez, louez ou investissez dans des biens immobiliers modernes et sécurisés.</p>
+<!-- Search Bar -->
+<div class="bg-white/80 backdrop-blur-xl p-2 rounded-[32px] shadow-2xl flex flex-col md:flex-row items-center gap-2 max-w-5xl mx-auto border border-white/30">
+<div class="flex-1 grid grid-cols-1 md:grid-cols-3 w-full">
+<div class="px-6 py-3 border-r border-slate-200 text-left">
+<label class="font-label-caps text-label-caps text-slate-500 block mb-1">Localisation</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">location_on</span>
+<select class="bg-transparent border-none p-0 focus:ring-0 text-slate-900 font-bold w-full">
+<option>Brazzaville, Congo</option>
+<option>Pointe-Noire, Congo</option>
+<option>Oyo, Congo</option>
+</select>
+</div>
+</div>
+<div class="px-6 py-3 border-r border-slate-200 text-left">
+<label class="font-label-caps text-label-caps text-slate-500 block mb-1">Type de Bien</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">home_work</span>
+<select class="bg-transparent border-none p-0 focus:ring-0 text-slate-900 font-bold w-full">
+<option>Villa de Luxe</option>
+<option>Appartement</option>
+<option>Terrain</option>
+</select>
+</div>
+</div>
+<div class="px-6 py-3 text-left">
+<label class="font-label-caps text-label-caps text-slate-500 block mb-1">Budget Max</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">payments</span>
+<input class="bg-transparent border-none p-0 focus:ring-0 text-slate-900 font-bold w-full" placeholder="Prix maximum" type="text"/>
+</div>
+</div>
+</div>
+<button class="bg-secondary text-white p-4 rounded-full flex items-center justify-center min-w-[60px] min-h-[60px] hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-section-padding px-6 max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] mb-2 block">Parcourir</span>
+<h2 class="font-h2 text-h2 text-primary">Explorer par Catégorie</h2>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="group relative h-64 rounded-[20px] overflow-hidden shadow-lg cursor-pointer col-span-2">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Villas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA24vUxDVTtlznIDT0GgtREq6f_IqmNYT5T6D53OBTPSdgrECjABuwsxvTgJxUbOOX7xFwm6iTuZcUgLM0u8Uc2bT92BkwOzLnMZ_KAJxYilEu2COi8ShuRj33MxwHGBNpDktyHbJRU6w8jAqgaGlj--v0gDbQeTRjPUscUD5GLdIPPvPaxWkkxB98rZ3W0zJ4SAKEraxMNC56U8g_Y_4a7p8p-K01ksMdEGpJQHxdCvIiWqR4agEYF5gSaTJNgV-AO2mxQ60BfT6A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex flex-col justify-end p-6">
+<h3 class="text-white font-h3 text-h3">Villas de prestige</h3>
+<p class="text-white/70 text-sm">34 Biens disponibles</p>
+</div>
+</div>
+<div class="group relative h-64 rounded-[20px] overflow-hidden shadow-lg cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Appartements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVz-CEtjeXW3eyCz4bLl6f6CL5NX7X9gR4ZL3pTw9uxPBoW8aXJY5a39h4zlTxy_q-mpkJ_7n-5Rm62kkteTBPhEKotBNTwiFGwsA9aEfjVEAZxvIfV50QrZXXNGeTQolRa2GdNPBOa9lynY4VLUbmlM4zH-EZ9o6D_k2oSG6l107JkFDbYwEUzzSjy41n8FlJQTEssCfhpQpT1GUO3PLWHOJwgCkF7qR-mLLnvIFfDYKf7LcfBo39wjoftZiOqBQDIUOHHJFSnSM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex flex-col justify-end p-6">
+<h3 class="text-white font-bold text-lg">Appartements</h3>
+</div>
+</div>
+<div class="group relative h-64 rounded-[20px] overflow-hidden shadow-lg cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Terrains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_CWPDwYlVfAMFUJN_hL-UmPIc4qfhqRdHWAp-G2QJx2npNmnwhSU9jZDXyQ-9P7utWhP1PJy4m2GXf3KopuPoIAqSPBnTeP9BDukpWEMg_RTBsZCfCyjC2J9MDqayDzSowPiRFGEYofHCbVKK5m9eq6Ed6j_I2nd-ltC7ygeimd5sEm5RTSispDo9Sx3oFw7eLU-wkMcEdQxaMTeXGjvYbInVNXk4uDXsEM-TAJ_cFh6ySVwXVCoaa3bkwx-HhlctchvpEy19ssE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex flex-col justify-end p-6">
+<h3 class="text-white font-bold text-lg">Terrains</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Listings -->
+<section class="bg-surface-container-low py-section-padding px-6">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">Sélection Exclusive</span>
+<h2 class="font-h2 text-h2 text-primary">Biens en Vedette</h2>
+</div>
+<a class="text-secondary font-bold flex items-center gap-2 hover:underline" href="galerie.html">Voir tout l'immobilier <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-[0px_10px_30px_rgba(0,23,45,0.05)] group">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Villa Emeraude" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Xw62vJpLhwD3M8Sx8ffgdUdxjKFXKDwYqTzgXncO9KgXoYRcfuiJPNKJ-dENYGmpBMJzjdsLNzC9NBhYzuxo0pSIktYYE32A4XrplPr0xBwvtFzliA889BAXG3pxuTyhf0Tdt4moHwq9s7FpIzyrbed5yRPIt546P6yerLAwLzz-BxTx60q7Eu8-n_0q4lKSvY7HZCYwhgfQddm6aTs6X_7DQ9oq4xx4-fzYb5lMujMFbHNvW8KOFb1f_Pd9Eedu4eP03nbHQPs"/>
+<div class="absolute top-4 left-4 bg-secondary/10 backdrop-blur-md text-secondary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-secondary/20">À Vendre</div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="font-bold text-2xl">450.000.000 FCFA</p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 text-slate-400 mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-medium uppercase tracking-widest">La Gombe, Kinshasa</span>
+</div>
+<h3 class="font-h3 text-xl mb-4 text-primary">Villa Emeraude - Design Contemporain</h3>
+<div class="flex items-center justify-between border-t border-slate-100 pt-4">
+<div class="flex gap-4">
+<div class="flex items-center gap-1 text-slate-600">
+<span class="material-symbols-outlined text-lg">bed</span>
+<span class="text-sm font-bold">4</span>
+</div>
+<div class="flex items-center gap-1 text-slate-600">
+<span class="material-symbols-outlined text-lg">aspect_ratio</span>
+<span class="text-sm font-bold">320 m²</span>
+</div>
+</div>
+<a href="detail-property.html?id=villa-emeraude" class="text-primary-container font-bold text-sm underline underline-offset-4">Voir détails</a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-[0px_10px_30px_rgba(0,23,45,0.05)] group">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Appartement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRvKF1rLXaRHgwltVDVZ1wce7EjWWhBrXRJ9PqRPhiOsyT6Lj-M833mB07c5ehfk1OY-dfiuBwfMXg-rI3BrDVmWZ4HYqwiC2WGoz_WS8jDrH_TmUWx9nryoB0nVDxp9lTB1P-MQZ5zeVQh3qmXflbEKkYwII_9-Qf8NrJI40g4xTTJSOxCLu-_Ng3r3j4-n3xOFba1cWi4qCsNrhKbUou6-I1UmNhnMuLjXzvo_YlMTvZUM2dBFShZ8NR6Dp5LYnYJzIgGeqtWRw"/>
+<div class="absolute top-4 left-4 bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-emerald-200">À Louer</div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="font-bold text-2xl">1.500.000 FCFA <span class="text-sm font-normal">/ mois</span></p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 text-slate-400 mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-medium uppercase tracking-widest">Ouenzé, Brazzaville</span>
+</div>
+<h3 class="font-h3 text-xl mb-4 text-primary">Appartement Le Capitole</h3>
+<div class="flex items-center justify-between border-t border-slate-100 pt-4">
+<div class="flex gap-4">
+<div class="flex items-center gap-1 text-slate-600">
+<span class="material-symbols-outlined text-lg">bed</span>
+<span class="text-sm font-bold">2</span>
+</div>
+<div class="flex items-center gap-1 text-slate-600">
+<span class="material-symbols-outlined text-lg">aspect_ratio</span>
+<span class="text-sm font-bold">110 m²</span>
+</div>
+</div>
+<a href="detail-property.html?id=appartement-capitole" class="text-primary-container font-bold text-sm underline underline-offset-4">Voir détails</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-[0px_10px_30px_rgba(0,23,45,0.05)] group">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Palais Ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa5ZS2Z6J8zzPn9lzfHpGpinnahXZm4NDvf9MNq_zn9HoFfOCZWiaFB77dBRNGOzPAKIVDQyNcxgVR-CNYDkPKYy5ew0xBfcAVZIj_RzzciJrZac4ZymuHOV1z5A8Md8GtMPz-yZ9-mBfMiSyRlP7O3ps6r0P9RXeJ1R9R5BcDrtM2NsN1F-qDyrivaJv4SKRAJ3yt5aLgcy0Xl78ZB0Gz_aOSVNwebslV704AvmPGvHAdOwlRjIELlsdCggO_A2yTowkpAGd-oSc"/>
+<div class="absolute top-4 left-4 bg-secondary/10 backdrop-blur-md text-secondary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-secondary/20">À Vendre</div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="font-bold text-2xl">800.000.000 FCFA</p>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 text-slate-400 mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-medium uppercase tracking-widest">Pointe-Noire</span>
+</div>
+<h3 class="font-h3 text-xl mb-4 text-primary">Palais de l'Océan - Front de Mer</h3>
+<div class="flex items-center justify-between border-t border-slate-100 pt-4">
+<div class="flex gap-4">
+<div class="flex items-center gap-1 text-slate-600">
+<span class="material-symbols-outlined text-lg">bed</span>
+<span class="text-sm font-bold">6</span>
+</div>
+<div class="flex items-center gap-1 text-slate-600">
+<span class="material-symbols-outlined text-lg">aspect_ratio</span>
+<span class="text-sm font-bold">540 m²</span>
+</div>
+</div>
+<a href="detail-property.html?id=palais-ocean" class="text-primary-container font-bold text-sm underline underline-offset-4">Voir détails</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics -->
+<section class="py-section-padding bg-primary-container text-white">
+<div class="max-w-container-max mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div>
+<span class="text-4xl md:text-5xl font-black mb-2 block">1,200+</span>
+<span class="font-label-caps text-on-primary-container">Biens Disponibles</span>
+</div>
+<div>
+<span class="text-4xl md:text-5xl font-black mb-2 block">850+</span>
+<span class="font-label-caps text-on-primary-container">Clients Satisfaits</span>
+</div>
+<div>
+<span class="text-4xl md:text-5xl font-black mb-2 block">12</span>
+<span class="font-label-caps text-on-primary-container">Villes Couvertes</span>
+</div>
+<div>
+<span class="text-4xl md:text-5xl font-black mb-2 block">45</span>
+<span class="font-label-caps text-on-primary-container">Agents Certifiés</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Agents -->
+<section class="py-section-padding px-6 max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block uppercase tracking-[0.2em]">Expertise Locale</span>
+<h2 class="font-h2 text-h2 text-primary">Nos Meilleurs Agents</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-[30px] shadow-[0px_20px_40px_rgba(0,0,0,0.03)] border border-slate-100 text-center">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-secondary/10">
+<img class="w-full h-full object-cover" alt="Agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nqWzA1XABnspQyZQOHoriLrSbEk4wyPSttoPhmxWKVFuVqx99VVM35TFC7EFFDLvdLbZBdTq9JJqYURwzPcmG-ekFxU8mrKfPS8EJbK7CgvPFtMy66b2Np66jBhDXEjDUSX1hAypaEAsGqXZgvksMRCo0UEO4przphMiFbiUXPxOc3ZtTZbPsfTGe7lqB87F1pRflg9T-xtBSv-FGCzSuoDa32v4b8Jkb0QoLXYfQmzkVekrkgA5kXl1Q1JWSOptIxJWQ9W1GI"/>
+</div>
+<h4 class="font-h3 text-lg mb-1">Cédric Malonga</h4>
+<p class="text-slate-500 text-sm mb-4">Spécialiste Luxe - Brazza</p>
+<div class="flex justify-center gap-1 text-yellow-500 mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<button class="w-full py-3 bg-emerald-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+</button>
+</div>
+<div class="bg-white p-8 rounded-[30px] shadow-[0px_20px_40px_rgba(0,0,0,0.03)] border border-slate-100 text-center">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-secondary/10">
+<img class="w-full h-full object-cover" alt="Agent 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo9DZv1imu9v0v0czx1XJXhTlaG4Imm1oQ1EGWUcWIWqCZJSwSJMT1pDUXEpl88KQssPOFHambbE9gnkJcSYNFVmXBHKPX3PDdpAPVJP_d9xkV-W7USgWjFd76aOVAYHDRpU86l_M5TDx_ZWYmVrGpNDcgKD9sCtORpy9zi6r2ZG4kYeDZYOij8w4Hh46Xox_jOtuSRJmjOjfXSiFXCNQ95Sdvq42lOOo0lU-MAFj1RwW9h2WS8CH49WGrjs0ddaybUj9gwcPFHHY"/>
+</div>
+<h4 class="font-h3 text-lg mb-1">Sandrine Koyo</h4>
+<p class="text-slate-500 text-sm mb-4">Conseillère Investissement</p>
+<div class="flex justify-center gap-1 text-yellow-500 mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<button class="w-full py-3 bg-emerald-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+</button>
+</div>
+<div class="bg-white p-8 rounded-[30px] shadow-[0px_20px_40px_rgba(0,0,0,0.03)] border border-slate-100 text-center">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-secondary/10">
+<img class="w-full h-full object-cover" alt="Agent 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrhuFPjXBGaRN-0cO7BDRZz0qE3K-_ZExIbPYWadrH2qzJoBOpX4QC4iSw-vMISUpPXMOgwwwaqM1PXoK3YK4XA7xRoqLmlvB4VWNiEtfpTcm2mSdfcLtXsnEeNdSyyBjRaFLRlQ6Lh2QPFrQfT7zdX2pJCiAoExiwpqOi3NI6Tt_TGdaJNMbSNeTBEv_FuAr1YoGPeb3sBpavm6RnNNtzKBx4Anq8sfBUOFkXzeD-4wp98JPb1P7MiUbIREi95bjZMCasLsk1YpU"/>
+</div>
+<h4 class="font-h3 text-lg mb-1">Guy Mabiala</h4>
+<p class="text-slate-500 text-sm mb-4">Terrains & Urbanisme</p>
+<div class="flex justify-center gap-1 text-yellow-500 mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+<button class="w-full py-3 bg-emerald-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+</button>
+</div>
+<div class="bg-white p-8 rounded-[30px] shadow-[0px_20px_40px_rgba(0,0,0,0.03)] border border-slate-100 text-center">
+<div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-secondary/10">
+<img class="w-full h-full object-cover" alt="Agent 4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP4fX0C2gxwyQWw6TE4KmXcH1q5synhXckNVLJKf_cpsPfgz7mRbnLiq03yH_d9cCtpJZIcrh74J97L_AOEFlioPBWaKe1Xk8Upt2X7f8ASRfIZlQggXSOuLMGcsTYdZpqQZknEs3xecWxF0-6l4ADwCuyFl1FAaxH2TFQ_L6pu8SEWaN-VNlk5mgVbtUFLv5C8aNdObeXZ5VvNGmt1RJ8TlgPDXYQtAWz433tJEBwGdfzW6IKwPANOegcZ7HNllqsKSCCug7tGsw"/>
+</div>
+<h4 class="font-h3 text-lg mb-1">Anita Loundou</h4>
+<p class="text-slate-500 text-sm mb-4">Locations - Pointe Noire</p>
+<div class="flex justify-center gap-1 text-yellow-500 mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<button class="w-full py-3 bg-emerald-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+</button>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-padding relative bg-[#f5f5f5] overflow-hidden">
+<div class="max-w-container-max mx-auto px-6 relative z-10">
+<h2 class="font-h2 text-h2 text-primary mb-12 text-center">Ce que disent nos clients</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white/60 backdrop-blur-xl p-10 rounded-[32px] border border-white/40 shadow-xl">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">format_quote</span>
+<p class="font-body-md text-slate-700 italic mb-8">"L'expérience avec Cerim.cg a été impeccable. Ils ont compris nos besoins de sécurité et d'élégance."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold">M. Okombi</p>
+<p class="text-xs text-slate-500">Entrepreneur</p>
+</div>
+</div>
+</div>
+<div class="bg-primary-container p-10 rounded-[32px] shadow-2xl scale-105">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">format_quote</span>
+<p class="font-body-md text-on-primary-container italic mb-8">"Grâce à leur expertise, nous avons investi dans un terrain stratégique. Une transparence rare sur le marché."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-700"></div>
+<div>
+<p class="font-bold text-white">Mme Tchicaya</p>
+<p class="text-xs text-on-primary-container">Investisseur</p>
+</div>
+</div>
+</div>
+<div class="bg-white/60 backdrop-blur-xl p-10 rounded-[32px] border border-white/40 shadow-xl">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">format_quote</span>
+<p class="font-body-md text-slate-700 italic mb-8">"L'interface est moderne et facilite énormément la recherche. On sent le premium dès le premier clic."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold">Jean-Paul N.</p>
+<p class="text-xs text-slate-500">Cadre Supérieur</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="py-section-padding px-6 max-w-container-max mx-auto">
+<div class="rounded-[40px] overflow-hidden relative h-[500px] shadow-2xl">
+<img class="w-full h-full object-cover" alt="Map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATDl7XhIRvPR9cvoWmvo7-ZwOf2gSrroDIuhkmn-bs9oIRlCbqrErNglFoaniWgZJ-hqh5tO3MJ6dak8C8MzKAwZ-0TFhDu3DcWFO40EkY7nSg9y7bHY1Wh8mTicopEOgdBuwSHqp0cNoXh7sh8srNLrXtTEQJ8_Q7K5S8xZeiZrSoGe5CxBP6yUSo8WtNb50f1SlpcUrORI8QinfNEt1DxDsWDFpbYUd7Hk0VdssW4oYqP7msxM7hdSvPpIoo4WDm0mRTKD0ayew"/>
+<div class="absolute inset-0 bg-slate-900/10 pointer-events-none"></div>
+<div class="absolute top-8 left-8 bg-white/90 backdrop-blur p-6 rounded-[24px] max-w-xs shadow-lg">
+<h4 class="font-h3 text-lg mb-2">Explorez par zone</h4>
+<p class="text-sm text-slate-600 mb-4">Cliquez sur les marqueurs pour voir les détails des biens.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full">Brazzaville (124)</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full">Pointe-Noire (82)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
 <footer class="w-full pt-20 pb-10 bg-slate-950 border-t border-slate-800">
 <div class="max-w-[1280px] mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
 <div>
@@ -403,17 +465,17 @@
 <div>
 <h4 class="text-white font-semibold mb-6">Navigation</h4>
 <ul class="space-y-4">
-<li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html">Accueil</a></li>
-<li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html">Galerie</a></li>
-<li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html">Acheter</a></li>
+                <li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html">Accueil</a></li>
+                <li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html">Galerie</a></li>
+                <li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html">Acheter</a></li>
 </ul>
 </div>
 <div>
 <h4 class="text-white font-semibold mb-6">Liens Utiles</h4>
 <ul class="space-y-4">
-<li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html#agents">Agents</a></li>
-<li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="#">À propos</a></li>
-<li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="contact.html">Contact</a></li>
+                <li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html#agents">Agents</a></li>
+                <li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="#">À propos</a></li>
+                <li><a class="font-manrope text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="contact.html">Contact</a></li>
 </ul>
 </div>
 <div>
@@ -428,7 +490,7 @@
 </div>
 </div>
 <div class="max-w-[1280px] mx-auto px-8 mt-20 pt-10 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-manrope text-sm leading-relaxed text-slate-400">© 2026 Cerim.cg. Tous droits réservés.</p>
+<p class="font-manrope text-sm leading-relaxed text-slate-400">© 2024 Cerim.cg. Tous droits réservés.</p>
 <div class="flex gap-6">
 <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
 <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
@@ -437,969 +499,35 @@
 </div>
 </footer>
 
-<!-- MODAL BACKDROP -->
-<div id="modal-backdrop" class="hidden fixed inset-0 bg-slate-900/60 dark:bg-black/85 backdrop-blur-sm z-50 transition-opacity"></div>
-
-<!-- TOUR BOOKING MODAL -->
-<div id="tour-modal" class="hidden fixed inset-0 flex items-center justify-center z-50 p-4 animate-popup">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-md shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden transition-colors duration-300">
-        <div class="flex justify-between items-center p-6 border-b border-slate-100 dark:border-slate-850">
-            <h3 class="text-base font-extrabold text-primary dark:text-white flex items-center gap-2">
-                <span class="material-symbols-outlined text-[#356665]">calendar_month</span>
-                Schedule a Private Tour
-            </h3>
-            <button id="tour-close-btn" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-[#ba1a1a] cursor-pointer transition-colors">
-                <span class="material-symbols-outlined text-sm">close</span>
-            </button>
-        </div>
-        
-        <form id="tour-form" class="p-6 space-y-4">
-            <!-- Selected Property info context -->
-            <div class="bg-slate-50 dark:bg-slate-850 p-3 rounded-2xl border border-slate-100 dark:border-slate-800 flex items-center gap-3">
-                <img id="tour-prop-img" src="" alt="Property" class="w-12 h-12 rounded-xl object-cover" />
-                <div>
-                    <h4 id="tour-prop-title" class="text-xs font-black text-primary dark:text-white"></h4>
-                    <span id="tour-prop-price" class="text-[10px] font-black text-secondary dark:text-slate-400 mt-0.5 block"></span>
-                </div>
-            </div>
-
-            <!-- Date Select -->
-            <div class="space-y-1">
-                <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Preferred Date</label>
-                <input type="date" required id="tour-date" class="w-full text-xs font-semibold rounded-xl border-slate-200 dark:border-slate-800 dark:bg-slate-850 dark:text-white focus:ring-secondary focus:border-secondary" />
-            </div>
-
-            <!-- Time slot buttons -->
-            <div class="space-y-2">
-                <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Preferred Time Slot</label>
-                <div class="grid grid-cols-3 gap-2">
-                    <button type="button" class="time-slot-btn py-2 border rounded-xl text-[10px] font-black uppercase text-center transition-all bg-primary text-white border-primary cursor-pointer" data-val="Matinée (09h - 12h)">Morning</button>
-                    <button type="button" class="time-slot-btn py-2 border border-slate-200 dark:border-slate-850 text-slate-700 dark:text-slate-350 hover:border-secondary rounded-xl text-[10px] font-black uppercase text-center transition-all cursor-pointer" data-val="Après-midi (14h - 17h)">Afternoon</button>
-                    <button type="button" class="time-slot-btn py-2 border border-slate-200 dark:border-slate-850 text-slate-700 dark:text-slate-350 hover:border-secondary rounded-xl text-[10px] font-black uppercase text-center transition-all cursor-pointer" data-val="Soirée (17h - 19h)">Evening</button>
-                </div>
-                <input type="hidden" id="tour-time" value="Matinée (09h - 12h)" />
-            </div>
-
-            <!-- Personal Info -->
-            <div class="space-y-3 pt-2">
-                <div class="space-y-1">
-                    <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Full Name</label>
-                    <input type="text" required id="tour-client-name" class="w-full text-xs font-semibold rounded-xl border-slate-200 dark:border-slate-800 dark:bg-slate-850 dark:text-white focus:ring-secondary focus:border-secondary" placeholder="Gerard Bia" value="Gerard BIA" />
-                </div>
-                <div class="space-y-1">
-                    <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Phone Number</label>
-                    <input type="tel" required id="tour-client-phone" class="w-full text-xs font-semibold rounded-xl border-slate-200 dark:border-slate-800 dark:bg-slate-850 dark:text-white focus:ring-secondary focus:border-secondary" placeholder="+242 06 123 4567" value="+242 06 999 8888" />
-                </div>
-            </div>
-
-            <!-- Submit -->
-            <button type="submit" class="w-full py-3.5 bg-primary dark:bg-secondary hover:bg-secondary dark:hover:bg-accent text-white rounded-full text-xs font-extrabold uppercase tracking-widest transition-colors cursor-pointer shadow-md mt-2">
-                Confirm Tour Booking
-            </button>
-        </form>
-    </div>
-</div>
-
-<!-- AUTH PORTAL / USER DASHBOARD MODAL -->
-<div id="auth-modal" class="hidden fixed inset-0 flex items-center justify-center z-50 p-4 animate-popup">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-sm shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden transition-colors duration-300">
-        
-        <!-- Tab Header -->
-        <div class="flex border-b border-slate-100 dark:border-slate-850 bg-slate-50 dark:bg-slate-850">
-            <button id="tab-login-btn" class="flex-1 py-4 text-xs font-black uppercase text-secondary border-b-2 border-secondary transition-all">Connexion</button>
-            <button id="tab-dashboard-btn" class="flex-1 py-4 text-xs font-bold uppercase text-slate-450 hover:text-slate-600 transition-all hidden">Dashboard</button>
-            <button id="auth-close-btn" class="px-4 text-slate-400 hover:text-slate-600 cursor-pointer"><span class="material-symbols-outlined">close</span></button>
-        </div>
-        
-        <!-- Login form panel -->
-        <div id="auth-form-panel" class="p-6 space-y-6">
-            <div class="text-center space-y-2">
-                <span class="material-symbols-outlined text-4xl text-secondary dark:text-accent">verified_user</span>
-                <h3 class="text-base font-extrabold text-[#00172D] dark:text-white">Authentification Sécurisée</h3>
-                <p class="text-xs text-slate-400">Accédez à votre espace client, vos favoris et gérez vos visites.</p>
-            </div>
-            
-            <form id="login-form" class="space-y-4">
-                <div class="space-y-1">
-                    <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Adresse Email</label>
-                    <input type="email" required id="login-email" class="w-full text-xs font-semibold rounded-xl border-slate-200 dark:border-slate-800 dark:bg-slate-850 dark:text-white focus:ring-secondary focus:border-secondary" value="gerard.bia@gmail.com" />
-                </div>
-                <div class="space-y-1">
-                    <div class="flex justify-between items-center">
-                        <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Mot de passe</label>
-                    </div>
-                    <input type="password" required class="w-full text-xs font-semibold rounded-xl border-slate-200 dark:border-slate-800 dark:bg-slate-850 dark:text-white focus:ring-secondary" value="••••••••" />
-                </div>
-                
-                <button type="submit" class="w-full py-3.5 bg-secondary hover:bg-accent text-white rounded-full text-xs font-extrabold uppercase tracking-widest transition-colors cursor-pointer shadow-md mt-2">
-                    Accéder à mon espace
-                </button>
-            </form>
-        </div>
-        
-        <!-- Dashboard client panel -->
-        <div id="auth-dashboard-panel" class="p-6 space-y-6 hidden">
-            <div class="flex items-center gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
-                <div class="w-12 h-12 rounded-full bg-secondary/10 text-secondary font-black text-base flex items-center justify-center">
-                    GB
-                </div>
-                <div>
-                    <h3 class="text-xs font-black text-primary dark:text-white">Gerard BIA</h3>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase bg-slate-100 text-slate-650 dark:bg-slate-800 dark:text-slate-300 mt-0.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Membre VIP
-                    </span>
-                </div>
-            </div>
-            
-            <!-- Inquiries List -->
-            <div class="space-y-4">
-                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider flex justify-between">
-                    <span>Mes Visites Privées</span>
-                    <span id="visit-count" class="bg-secondary/15 text-secondary px-2 py-0.5 rounded-full text-[9px]">0</span>
-                </h4>
-                
-                <div id="dashboard-inquiries-list" class="space-y-3 max-h-[220px] overflow-y-auto pr-1">
-                    <!-- Dynamic client inquires injected here -->
-                    <div class="text-center py-6 text-slate-450 text-xs font-medium space-y-2">
-                        <span class="material-symbols-outlined text-3xl text-slate-350 dark:text-slate-700">calendar_today</span>
-                        <p>Aucune visite programmée pour le moment.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Logout button -->
-            <div class="pt-4 border-t border-slate-150 dark:border-slate-800 flex gap-2">
-                <button id="dashboard-logout" class="flex-1 py-3 border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-[#ba1a1a] rounded-full text-xs font-extrabold uppercase transition-colors cursor-pointer">
-                    Déconnexion
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- COUPS DE COEUR SIDEBAR DRAWER -->
-<aside id="favorites-sidebar" class="hidden fixed inset-y-0 right-0 max-w-sm w-full bg-white dark:bg-slate-900 shadow-2xl z-50 overflow-y-auto animate-slide-in transition-colors duration-300">
-    <div class="p-6 md:p-8 space-y-6">
-        <div class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800">
-            <div class="flex items-center gap-2 text-[#00172D] dark:text-white">
-                <span class="material-symbols-outlined text-[#ba1a1a]">favorite</span>
-                <h2 class="text-sm font-extrabold uppercase tracking-wide">Mes Coups de Cœur</h2>
-            </div>
-            <button id="favorites-close" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800 hover:bg-[#ba1a1a] hover:text-white transition-colors cursor-pointer">
-                <span class="material-symbols-outlined text-[18px]">close</span>
-            </button>
-        </div>
-        
-        <div id="favorites-list" class="space-y-4 max-h-[75vh] overflow-y-auto pr-1">
-            <!-- Empty state shown by default -->
-            <div class="text-center py-12 space-y-3">
-                <span class="material-symbols-outlined text-slate-300 dark:text-slate-700 text-5xl">favorite_border</span>
-                <p class="text-xs font-extrabold text-slate-450 uppercase tracking-widest">Aucun coup de cœur</p>
-                <p class="text-[11px] text-slate-400">Cliquez sur l'icône cœur pour sauvegarder des résidences d'exception.</p>
-            </div>
-        </div>
-    </div>
-</aside>
-
-<!-- LIGHTBOX/SLIDESHOW FULLSCREEN MODAL -->
-<div id="lightbox-modal" class="hidden fixed inset-0 bg-black/95 z-[99] flex flex-col justify-between p-6">
-    <!-- Top toolbar -->
-    <div class="flex justify-between items-center text-white text-xs font-bold">
-        <span id="lightbox-counter">Image 1 of 4</span>
-        <button onclick="closeLightbox()" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-pointer"><span class="material-symbols-outlined">close</span></button>
-    </div>
-    
-    <!-- Image Slider Viewport -->
-    <div class="flex-1 flex items-center justify-between gap-4 max-w-5xl mx-auto w-full">
-        <button onclick="changeLightboxImage(-1)" class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer active:scale-90 transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
-        
-        <div class="flex-1 h-[70vh] flex items-center justify-center">
-            <img id="lightbox-img" src="" alt="Zoom" class="max-w-full max-h-full object-contain rounded-2xl animate-popup" />
-        </div>
-        
-        <button onclick="changeLightboxImage(1)" class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer active:scale-90 transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
-    </div>
-    
-    <!-- Bottom caption text -->
-    <div class="text-center text-xs font-bold text-slate-400 py-4" id="lightbox-caption">
-        Villa Lumière Brazzaville
-    </div>
-</div>
-
-<!-- FLOATING SUCCESS TOAST NOTIFICATION -->
-<div id="toast-notif" class="hidden fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-white/85 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-150 dark:border-slate-800 shadow-2xl max-w-sm flex items-start gap-3 animate-fade-in">
-    <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 flex items-center justify-center shrink-0">
-        <span class="material-symbols-outlined text-lg">check_circle</span>
-    </div>
-    <div>
-        <h4 id="toast-title" class="text-xs font-black text-[#00172D] dark:text-white">Succès</h4>
-        <p id="toast-desc" class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 leading-normal"></p>
-    </div>
-    <button id="toast-close" class="text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined text-base">close</span></button>
-</div>
-
-<!-- COMPLETE APP JS LOGIC -->
 <script>
-    // FULL PROPERTIES DATA WITH PRESTIGE SPECS
-    const propertiesData = [
-        {
-            id: 1,
-            title: "Villa Lumière Brazzaville",
-            price: "450M FCFA",
-            convertedPrice: "≈ $745,000 USD",
-            type: "villa",
-            tagStatus: "FOR SALE",
-            tagDistrict: "OUENZÉ DISTRICT",
-            city: "Brazzaville",
-            neighborhood: "Quartier Résidentiel",
-            beds: "05",
-            baths: "04",
-            size: "450m²",
-            parking: "02",
-            agentName: "Jean-Pierre Mobiala",
-            agentTitle: "Senior Portfolio Manager",
-            agentAvatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nqWzA1XABnspQyZQOHoriLrSbEk4wyPSttoPhmxWKVFuVqx99VVM35TFC7EFFDLvdLbZBdTq9JJqYURwzPcmG-ekFxU8mrKfPS8EJbK7CgvPFtMy66b2Np66jBhDXEjDUSX1hAypaEAsGqXZgvksMRCo0UEO4przphMiFbiUXPxOc3ZtTZbPsfTGe7lqB87F1pRflg9T-xtBSv-FGCzSuoDa32v4b8Jkb0QoLXYfQmzkVekrkgA5kXl1Q1JWSOptIxJWQ9W1GI",
-            overview: `<p>Discover an unparalleled living experience in the heart of Brazzaville. Villa Lumière represents the pinnacle of modern Congolese architecture, blending sustainable design with international luxury standards. Every square meter of this property has been meticulously crafted to capture the soft equatorial light while maintaining natural thermal comfort.</p>
-                       <p>The open-plan living area features bespoke Congolese teak cabinetry and flows seamlessly onto a wrap-around terrace. The infinity pool overlooks the lush urban landscape, providing a serene escape from the city's vibrant energy. With 24/7 solar backup, advanced water filtration, and a state-of-the-art security system, this villa offers absolute peace of mind.</p>`,
-            distDowntown: "5 mins to Downtown Brazzaville",
-            distAirport: "20 mins to Maya-Maya Airport",
-            images: [
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuB_ZfuauCTpakVuNXfyPzaG3sFPC5ly66jbZfKBdeWwHoq1U9WNzsUUUnzEOC8zURrZw-emrG6tufWDivTQjqzPCSRD-MK2054e5emFMsguTaOdMW0c4ixtR8zjuRSA43TrO24SnAPRNkxkqWnuPepyVuf8nwTsfItf6i9j6l1np-5ICEbQPapuBa28PXRLcX7B0Zu_MMfvPTwee-osSeGhvK-Dbntdv_ZQ5KciTI0LqLUzWm1C3CiTCx4pmMwJEMf7OYHrVu5sCDY",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHYlbOhCzS67t1EvfPZns0odDdslV3Sku8czBstjTsC8De7iGnfcGx9RStiiuaRJ1JgOgxSBC0qmqDHteqJikrtKmsmKOqbY3lZ7zS3MTDyi71pAAgwkKUz6QohUl0OOdOshvoYHH6GsPEE0WMRynQPrvP8lNJRbJQpsYNsyLTHuNcjZHFDFCuIE4qXiRibp-zgRfp9v5cyJ4Ja9yByLAPQtIYJnAHuwRzPqiXHEWqGH7J4Zzb6RBv1lqAN0ZXoEnwwlHdZ5s3Y",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuB9XTMAbEUfZx4lflQFMMzE76iRxNQK5wf4gR5n5rraknK8PNuiiPXwzlOXdFSV4ob88YEtU97Djv-IGRd3eIrpYOips8tHcF9aQfc9imG8j5hS5u0BaYmrcPccbT-Yk7GxG-yY3FHRB45T26ke2oRn5DnLtIE_SMFeJG0qYMQz8Tgaav1gmkhlRFbgpiBtSzeSTRMZ_jvZNfP6qD1YtngkTKQTix7ma3YV0omdGsP-NfqHtATMAK2jrtWqokCFOOV5RrdHK8-0dsk",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuCLzUHjmTYq6VAdATAouVdkuB7lh9ISshXMBTyEvjkW06ljEmPBGwvTZ--hCwvI5WrKF0WQk5DshOzmzahvOYO1iv-86C30wJYShX4Pu9Tw2-dgT964X7fFXQI1Vs2bndwtLTD5sBdw6UNc4XTRlkkwp3PuW8-7JdRIBXL3GEIv0u07wCyeya92Zg5521_a1sJKVk2ychAoMe42GwCIRA_Nflyr0O9sGbzRXAUNhkS6XABVqyZ3o-0_-s2kg-nTPemwY7Kc_lbbv1M"
-            ],
-            amenities: [
-                { name: "Private Infinity Pool", icon: "pool" },
-                { name: "Solar Power Infrastructure", icon: "solar_power" },
-                { name: "Smart Security Mesh", icon: "shield_lock" },
-                { name: "Temperature-Controlled Cellar", icon: "wine_bar" },
-                { name: "Tropical Zen Garden", icon: "park" },
-                { name: "Staff Quarters & Service Area", icon: "room_service" }
-            ],
-            discoverTag: "LUXURY"
-        },
-        {
-            id: 2,
-            title: "Riverside Executive Suite",
-            price: "280M FCFA",
-            convertedPrice: "≈ $460,000 USD",
-            type: "appartement",
-            tagStatus: "FOR SALE",
-            tagDistrict: "GOMBE DISTRICT",
-            city: "Kinshasa",
-            neighborhood: "Gombe River Front",
-            beds: "03",
-            baths: "02",
-            size: "210m²",
-            parking: "01",
-            agentName: "Sandrine Koyo",
-            agentTitle: "Conseillère Investissement",
-            agentAvatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCo9DZv1imu9v0v0czx1XJXhTlaG4Imm1oQ1EGWUcWIWqCZJSwSJMT1pDUXEpl88KQssPOFHambbE9gnkJcSYNFVmXBHKPX3PDdpAPVJP_d9xkV-W7USgWjFd76aOVAYHDRpU86l_M5TDx_ZWYmVrGpNDcgKD9sCtORpy9zi6r2ZG4kYeDZYOij8w4Hh46Xox_jOtuSRJmjOjfXSiFXCNQ95Sdvq42lOOo0lU-MAFj1RwW9h2WS8CH49WGrjs0ddaybUj9gwcPFHHY",
-            overview: `<p>Découvrez le prestige de résider au bord du majestueux fleuve Congo. La suite exécutive Riverside offre des espaces de vie contemporains d'une élégance rare, combinant des finitions en marbre et de larges ouvertures.</p>
-                       <p>Idéal pour les cadres et investisseurs, l'appartement dispose d'une cuisine ultra-moderne équipée, d'un accès sécurisé par badge électronique et de terrasses privatives offrant des couchers de soleil incomparables sur le fleuve.</p>`,
-            distDowntown: "2 mins to Downtown Gombe",
-            distAirport: "45 mins to N'djili Airport",
-            images: [
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuB9XTMAbEUfZx4lflQFMMzE76iRxNQK5wf4gR5n5rraknK8PNuiiPXwzlOXdFSV4ob88YEtU97Djv-IGRd3eIrpYOips8tHcF9aQfc9imG8j5hS5u0BaYmrcPccbT-Yk7GxG-yY3FHRB45T26ke2oRn5DnLtIE_SMFeJG0qYMQz8Tgaav1gmkhlRFbgpiBtSzeSTRMZ_jvZNfP6qD1YtngkTKQTix7ma3YV0omdGsP-NfqHtATMAK2jrtWqokCFOOV5RrdHK8-0dsk",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHYlbOhCzS67t1EvfPZns0odDdslV3Sku8czBstjTsC8De7iGnfcGx9RStiiuaRJ1JgOgxSBC0qmqDHteqJikrtKmsmKOqbY3lZ7zS3MTDyi71pAAgwkKUz6QohUl0OOdOshvoYHH6GsPEE0WMRynQPrvP8lNJRbJQpsYNsyLTHuNcjZHFDFCuIE4qXiRibp-zgRfp9v5cyJ4Ja9yByLAPQtIYJnAHuwRzPqiXHEWqGH7J4Zzb6RBv1lqAN0ZXoEnwwlHdZ5s3Y",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuBXhaeQlt31ObBEsjiVxUxEgDIsDJ4U6AtWXPEU--bhs7H7EujO2uDlxPsvHAMcK4odEZzyhZpk4djdUWDp7RoTeT6Rl9HcTSoDnV0rOgHwyhaf7LVeyaDGPkbhp3V_bQZ5q88P-Yim83aSlNtQOgXVkZa3DtC5dGJjSiBfvHOxl2yd6Km8b-9fmltZANpqwXfEjdkF8kSuVy7lSPfLjWKBAKS_0yt4s3FC-TgX8dxPKAHoNzAcJqCP0zb9Vvlm83w2wKw3I9QSp4A",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuAa5ZS2Z6J8zzPn9lzfHpGpinnahXZm4NDvf9MNq_zn9HoFfOCZWiaFB77dBRNGOzPAKIVDQyNcxgVR-CNYDkPKYy5ew0xBfcAVZIj_RzzciJrZac4ZymuHOV1z5A8Md8GtMPz-yZ9-mBfMiSyRlP7O3ps6r0P9RXeJ1R9R5BcDrtM2NsN1F-qDyrivaJv4SKRAJ3yt5aLgcy0Xl78ZB0Gz_aOSVNwebslV704AvmPGvHAdOwlRjIELlsdCggO_A2yTowkpAGd-oSc"
-            ],
-            amenities: [
-                { name: "Direct River View", icon: "beach_access" },
-                { name: "Smart Security Mesh", icon: "shield_lock" },
-                { name: "Ascenseur Privé", icon: "elevator" },
-                { name: "24/7 Energy Backup", icon: "solar_power" },
-                { name: "Parking Privatif", icon: "garage" },
-                { name: "Conciergerie Premium", icon: "room_service" }
-            ],
-            discoverTag: "LUXURY"
-        },
-        {
-            id: 3,
-            title: "Atlantic Vista Villa",
-            price: "520M FCFA",
-            convertedPrice: "≈ $860,000 USD",
-            type: "villa",
-            tagStatus: "FOR SALE",
-            tagDistrict: "COASTAL DISTRICT",
-            city: "Pointe-Noire",
-            neighborhood: "Côte Sauvage",
-            beds: "05",
-            baths: "05",
-            size: "580m²",
-            parking: "03",
-            agentName: "Anita Loundou",
-            agentTitle: "Locations - Pointe Noire",
-            agentAvatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDP4fX0C2gxwyQWw6TE4KmXcH1q5synhXckNVLJKf_cpsPfgz7mRbnLiq03yH_d9cCtpJZIcrh74J97L_AOEFlioPBWaKe1Xk8Upt2X7f8ASRfIZlQggXSOuLMGcsTYdZpqQZknEs3xecWxF0-6l4ADwCuyFl1FAaxH2TFQ_L6pu8SEWaN-VNlk5mgVbtUFLv5C8aNdObeXZ5VvNGmt1RJ8TlgPDXYQtAWz433tJEBwGdfzW6IKwPANOegcZ7HNllqsKSCCug7tGsw",
-            overview: `<p>Surplombant les eaux azures de Pointe-Noire, la villa Atlantic Vista représente le zénith du design côtier contemporain. Ses baies vitrées monumentales coulissantes créent une transition invisible entre la résidence et l'océan Atlantique.</p>
-                       <p>La villa propose une piscine à débordement géante tournée vers le large, un spa privé, ainsi qu'un système de filtration d'eau écologique. Sécurisée et connectée, cette propriété haut de gamme offre un style de vie balnéaire absolument unique.</p>`,
-            distDowntown: "8 mins to Downtown Pointe-Noire",
-            distAirport: "15 mins to Agostinho-Neto Airport",
-            images: [
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHYlbOhCzS67t1EvfPZns0odDdslV3Sku8czBstjTsC8De7iGnfcGx9RStiiuaRJ1JgOgxSBC0qmqDHteqJikrtKmsmKOqbY3lZ7zS3MTDyi71pAAgwkKUz6QohUl0OOdOshvoYHH6GsPEE0WMRynQPrvP8lNJRbJQpsYNsyLTHuNcjZHFDFCuIE4qXiRibp-zgRfp9v5cyJ4Ja9yByLAPQtIYJnAHuwRzPqiXHEWqGH7J4Zzb6RBv1lqAN0ZXoEnwwlHdZ5s3Y",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuCLzUHjmTYq6VAdATAouVdkuB7lh9ISshXMBTyEvjkW06ljEmPBGwvTZ--hCwvI5WrKF0WQk5DshOzmzahvOYO1iv-86C30wJYShX4Pu9Tw2-dgT964X7fFXQI1Vs2bndwtLTD5sBdw6UNc4XTRlkkwp3PuW8-7JdRIBXL3GEIv0u07wCyeya92Zg5521_a1sJKVk2ychAoMe42GwCIRA_Nflyr0O9sGbzRXAUNhkS6XABVqyZ3o-0_-s2kg-nTPemwY7Kc_lbbv1M",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuB_ZfuauCTpakVuNXfyPzaG3sFPC5ly66jbZfKBdeWwHoq1U9WNzsUUUnzEOC8zURrZw-emrG6tufWDivTQjqzPCSRD-MK2054e5emFMsguTaOdMW0c4ixtR8zjuRSA43TrO24SnAPRNkxkqWnuPepyVuf8nwTsfItf6i9j6l1np-5ICEbQPapuBa28PXRLcX7B0Zu_MMfvPTwee-osSeGhvK-Dbntdv_ZQ5KciTI0LqLUzWm1C3CiTCx4pmMwJEMf7OYHrVu5sCDY",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuDRvKF1rLXaRHgwltVDVZ1wce7EjWWhBrXRJ9PqRPhiOsyT6Lj-M833mB07c5ehfk1OY-dfiuBwfMXg-rI3BrDVmWZ4HYqwiC2WGoz_WS8jDrH_TmUWx9nryoB0nVDxp9lTB1P-MQZ5zeVQh3qmXflbEKkYwII_9-Qf8NrJI40g4xTTJSOxCLu-_Ng3r3j4-n3xOFba1cWi4qCsNrhKbUou6-I1UmNhnMuLjXzvo_YlMTvZUM2dBFShZ8NR6Dp5LYnYJzIgGeqtWRw"
-            ],
-            amenities: [
-                { name: "Oceanfront Infinity Pool", icon: "pool" },
-                { name: "Direct Beach Access", icon: "beach_access" },
-                { name: "Solar Grid Backup", icon: "solar_power" },
-                { name: "Smart Security Mesh", icon: "shield_lock" },
-                { name: "Bespoke Wine Cellar", icon: "wine_bar" },
-                { name: "Detached Staff Quarters", icon: "room_service" }
-            ],
-            discoverTag: "NEW"
-        },
-        {
-            id: 4,
-            title: "The Glass Pavilion",
-            price: "390M FCFA",
-            convertedPrice: "≈ $645,000 USD",
-            type: "villa",
-            tagStatus: "FOR SALE",
-            tagDistrict: "ALMADIES DISTRICT",
-            city: "Brazzaville",
-            neighborhood: "Almadies Nord",
-            beds: "04",
-            baths: "03",
-            size: "380m²",
-            parking: "02",
-            agentName: "Guy Mabiala",
-            agentTitle: "Terrains & Urbanisme",
-            agentAvatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBrhuFPjXBGaRN-0cO7BDRZz0qE3K-_ZExIbPYWadrH2qzJoBOpX4QC4iSw-vMISUpPXMOgwwwaqM1PXoK3YK4XA7xRoqLmlvB4VWNiEtfpTcm2mSdfcLtXsnEeNdSyyBjRaFLRlQ6Lh2QPFrQfT7zdX2pJCiAoExiwpqOi3NI6Tt_TGdaJNMbSNeTBEv_FuAr1YoGPeb3sBpavm6RnNNtzKBx4Anq8sfBUOFkXzeD-4wp98JPb1P7MiUbIREi95bjZMCasLsk1YpU",
-            overview: `<p>Une merveille de verre et d'acier nichée dans la verdure tropicale. Le Glass Pavilion est une véritable déclaration d'architecture minimaliste qui intègre son environnement extérieur dans chaque pièce de vie.</p>
-                       <p>Équipée d'une technologie géothermique de pointe et de panneaux solaires performants, cette propriété durable offre un confort thermique naturel inégalé. Elle dispose d'une cuisine sur mesure ouverte et de superbes baies panoramiques.</p>`,
-            distDowntown: "6 mins to Downtown Brazza",
-            distAirport: "25 mins to Airport",
-            images: [
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuCLzUHjmTYq6VAdATAouVdkuB7lh9ISshXMBTyEvjkW06ljEmPBGwvTZ--hCwvI5WrKF0WQk5DshOzmzahvOYO1iv-86C30wJYShX4Pu9Tw2-dgT964X7fFXQI1Vs2bndwtLTD5sBdw6UNc4XTRlkkwp3PuW8-7JdRIBXL3GEIv0u07wCyeya92Zg5521_a1sJKVk2ychAoMe42GwCIRA_Nflyr0O9sGbzRXAUNhkS6XABVqyZ3o-0_-s2kg-nTPemwY7Kc_lbbv1M",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuB_ZfuauCTpakVuNXfyPzaG3sFPC5ly66jbZfKBdeWwHoq1U9WNzsUUUnzEOC8zURrZw-emrG6tufWDivTQjqzPCSRD-MK2054e5emFMsguTaOdMW0c4ixtR8zjuRSA43TrO24SnAPRNkxkqWnuPepyVuf8nwTsfItf6i9j6l1np-5ICEbQPapuBa28PXRLcX7B0Zu_MMfvPTwee-osSeGhvK-Dbntdv_ZQ5KciTI0LqLUzWm1C3CiTCx4pmMwJEMf7OYHrVu5sCDY",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuBXhaeQlt31ObBEsjiVxUxEgDIsDJ4U6AtWXPEU--bhs7H7EujO2uDlxPsvHAMcK4odEZzyhZpk4djdUWDp7RoTeT6Rl9HcTSoDnV0rOgHwyhaf7LVeyaDGPkbhp3V_bQZ5q88P-Yim83aSlNtQOgXVkZa3DtC5dGJjSiBfvHOxl2yd6Km8b-9fmltZANpqwXfEjdkF8kSuVy7lSPfLjWKBAKS_0yt4s3FC-TgX8dxPKAHoNzAcJqCP0zb9Vvlm83w2wKw3I9QSp4A",
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHYlbOhCzS67t1EvfPZns0odDdslV3Sku8czBstjTsC8De7iGnfcGx9RStiiuaRJ1JgOgxSBC0qmqDHteqJikrtKmsmKOqbY3lZ7zS3MTDyi71pAAgwkKUz6QohUl0OOdOshvoYHH6GsPEE0WMRynQPrvP8lNJRbJQpsYNsyLTHuNcjZHFDFCuIE4qXiRibp-zgRfp9v5cyJ4Ja9yByLAPQtIYJnAHuwRzPqiXHEWqGH7J4Zzb6RBv1lqAN0ZXoEnwwlHdZ5s3Y"
-            ],
-            amenities: [
-                { name: "Piscine Chauffée", icon: "pool" },
-                { name: "Grand Jardin Paysager", icon: "park" },
-                { name: "Domotique Intégrée", icon: "settings" },
-                { name: "Solar Grid Backup", icon: "solar_power" },
-                { name: "Double Garage Fermé", icon: "garage" },
-                { name: "Sécurité Active 24/7", icon: "shield_lock" }
-            ],
-            discoverTag: "ARCHITECTURAL"
-        }
-    ];
-
-    // STATE VARIABLES
-    let activeProperty = propertiesData[0];
-    let favorites = JSON.parse(localStorage.getItem("cerim_favs")) || [];
-    let inquiries = JSON.parse(localStorage.getItem("cerim_tours")) || [];
-    let isLoggedIn = localStorage.getItem("cerim_signed_in") === "true";
-    let listCategoryFilter = "";
-    
-    // Lightbox slider state
-    let activeLightboxIndex = 0;
-
-    // DOM HOOKS
-    const favBadge = document.getElementById("fav-badge");
-    const themeIcon = document.getElementById("theme-icon");
-    const modalBackdrop = document.getElementById("modal-backdrop");
-    const toastNotif = document.getElementById("toast-notif");
-    const toastTitle = document.getElementById("toast-title");
-    const toastDesc = document.getElementById("toast-desc");
-
-    // INITIALIZATION
-    document.addEventListener("DOMContentLoaded", () => {
-        initTheme();
-        initFavoritesBadge();
-        renderActiveDetails();
-        renderDiscoverGrid();
-        setupBookingModal();
-        setupAuthModal();
-    });
-
-    // TOAST NOTIFICATIONS HELPER
-    function showToast(title, desc) {
-        toastTitle.innerText = title;
-        toastDesc.innerText = desc;
-        toastNotif.classList.remove("hidden");
-        setTimeout(() => toastNotif.classList.add("hidden"), 5000);
-    }
-    document.getElementById("toast-close").addEventListener("click", () => toastNotif.classList.add("hidden"));
-
-    // THEME CONTROLLER
-    function initTheme() {
-        const theme = localStorage.getItem("cerim_theme") || "light";
-        if (theme === "dark") {
-            document.documentElement.classList.add("dark");
-            document.documentElement.classList.remove("light");
-            themeIcon.innerText = "light_mode";
-        } else {
-            document.documentElement.classList.add("light");
-            document.documentElement.classList.remove("dark");
-            themeIcon.innerText = "dark_mode";
-        }
-    }
-
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const isDark = document.documentElement.classList.contains("dark");
-        if (isDark) {
-            document.documentElement.classList.remove("dark");
-            document.documentElement.classList.add("light");
-            themeIcon.innerText = "dark_mode";
-            localStorage.setItem("cerim_theme", "light");
-            showToast("Mode Clair activé", "Affichage lumineux pour journée ensoleillée.");
-        } else {
-            document.documentElement.classList.remove("light");
-            document.documentElement.classList.add("dark");
-            themeIcon.innerText = "light_mode";
-            localStorage.setItem("cerim_theme", "dark");
-            showToast("Mode Sombre activé", "Confort visuel immersif pour soirée élégante.");
-        }
-    });
-
-    // FAVORITES (LOCAL STORAGE PERSISTENCE)
-    function initFavoritesBadge() {
-        if (favorites.length > 0) {
-            favBadge.innerText = favorites.length;
-            favBadge.classList.remove("scale-0");
-            favBadge.classList.add("scale-100");
-        } else {
-            favBadge.classList.add("scale-0");
-            favBadge.classList.remove("scale-100");
-        }
-        renderFavoritesList();
-    }
-
-    function toggleFavorite(id) {
-        const index = favorites.indexOf(id);
-        const prop = propertiesData.find(p => p.id === id);
-        
-        if (index === -1) {
-            favorites.push(id);
-            showToast("Coup de cœur !", `${prop.title} ajoutée à vos favoris.`);
-        } else {
-            favorites.splice(index, 1);
-            showToast("Retiré des coups de cœur", `${prop.title} retirée.`);
-        }
-        
-        localStorage.setItem("cerim_favs", JSON.stringify(favorites));
-        initFavoritesBadge();
-        updateFavoritesButtonUI();
-        
-        // Refresh grids if visible
-        if (!document.getElementById("list-view").classList.contains("hidden")) {
-            renderListViewGrid();
-        }
-    }
-
-    function updateFavoritesButtonUI() {
-        const favBtn = document.getElementById("sidebar-fav-btn");
-        const isFav = favorites.includes(activeProperty.id);
-        
-        if (isFav) {
-            favBtn.innerHTML = `<span class="material-symbols-outlined text-[19px]" style="font-variation-settings: 'FILL' 1">favorite</span>`;
-            favBtn.classList.remove("text-slate-400");
-            favBtn.classList.add("text-[#ba1a1a]", "border-[#ba1a1a]");
-        } else {
-            favBtn.innerHTML = `<span class="material-symbols-outlined text-[19px]" style="font-variation-settings: 'FILL' 0">favorite</span>`;
-            favBtn.classList.add("text-slate-400");
-            favBtn.classList.remove("text-[#ba1a1a]", "border-[#ba1a1a]");
-        }
-    }
-
-    // FAVORITES SIDEBAR SYSTEM
-    const favSidebar = document.getElementById("favorites-sidebar");
-    document.getElementById("fav-menu-toggle").addEventListener("click", () => {
-        modalBackdrop.classList.remove("hidden");
-        favSidebar.classList.remove("hidden");
-    });
-    document.getElementById("favorites-close").addEventListener("click", () => {
-        favSidebar.classList.add("hidden");
-        modalBackdrop.classList.add("hidden");
-    });
-
-    function renderFavoritesList() {
-        const listEl = document.getElementById("favorites-list");
-        if (favorites.length === 0) {
-            listEl.innerHTML = `
-                <div class="text-center py-12 space-y-3">
-                    <span class="material-symbols-outlined text-slate-300 dark:text-slate-700 text-5xl">favorite_border</span>
-                    <p class="text-xs font-extrabold text-slate-450 uppercase tracking-widest">Aucun coup de cœur</p>
-                    <p class="text-[11px] text-slate-400">Marquez des résidences d'exception d'un cœur pour les ajouter ici.</p>
-                </div>
-            `;
-            return;
-        }
-
-        let html = '<div class="space-y-4">';
-        favorites.forEach(favId => {
-            const prop = propertiesData.find(p => p.id === favId);
-            if (prop) {
-                html += `
-                    <div class="flex gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 justify-between items-center">
-                        <div class="flex gap-3 items-center cursor-pointer" onclick="selectProperty(${prop.id})">
-                            <img src="${prop.images[0]}" alt="${prop.title}" class="w-12 h-12 rounded-xl object-cover" />
-                            <div>
-                                <h4 class="text-[11px] font-black text-primary dark:text-white">${prop.title}</h4>
-                                <p class="text-[10px] font-black text-secondary dark:text-slate-400 mt-0.5">${prop.price}</p>
-                            </div>
-                        </div>
-                        <button onclick="toggleFavorite(${prop.id}); event.stopPropagation();" class="text-[#ba1a1a] hover:text-[#93000a] w-8 h-8 flex items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm cursor-pointer">
-                            <span class="material-symbols-outlined text-sm">delete</span>
-                        </button>
-                    </div>
-                `;
-            }
+document.addEventListener('DOMContentLoaded', function() {
+    // Search functionality
+    const searchBtn = document.querySelector('button.bg-secondary');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+            alert('Recherche lancée!');
         });
-        html += "</div>";
-        listEl.innerHTML = html;
     }
 
-    // MAIN RENDER DETAILS VIEW (HYDRATION OF DATA)
-    function renderActiveDetails() {
-        // Main images
-        document.getElementById("main-gallery-img").src = activeProperty.images[0];
-        document.getElementById("gallery-sub-1").src = activeProperty.images[1];
-        document.getElementById("gallery-sub-2").src = activeProperty.images[2];
-        document.getElementById("gallery-sub-3").src = activeProperty.images[3];
-
-        // Headers labels
-        document.getElementById("detail-tag-status").innerText = activeProperty.tagStatus;
-        document.getElementById("detail-tag-district").innerText = activeProperty.tagDistrict;
-        document.getElementById("detail-title").innerText = activeProperty.title;
-        document.getElementById("detail-loc").innerHTML = `<span class="material-symbols-outlined text-[17px] text-secondary">location_on</span> ${activeProperty.neighborhood}, ${activeProperty.city}, Republic of the Congo`;
-        
-        // Spec numbers
-        document.getElementById("spec-beds").innerText = activeProperty.beds;
-        document.getElementById("spec-baths").innerText = activeProperty.baths;
-        document.getElementById("spec-size").innerText = activeProperty.size;
-        document.getElementById("spec-parking").innerText = activeProperty.parking;
-        
-        // Text blocks
-        document.getElementById("detail-overview-p").innerHTML = activeProperty.overview;
-        
-        // Sidebar offering prices
-        document.getElementById("sidebar-price").innerText = activeProperty.price;
-        document.getElementById("sidebar-converted-price").innerText = activeProperty.convertedPrice;
-        
-        // Agent context
-        document.getElementById("agent-name").innerText = activeProperty.agentName;
-        document.getElementById("agent-title").innerText = activeProperty.agentTitle;
-        document.getElementById("agent-avatar").src = activeProperty.agentAvatar;
-
-        // Amenities
-        const amenitiesGrid = document.getElementById("amenities-grid");
-        let amenHtml = "";
-        activeProperty.amenities.forEach(amen => {
-            amenHtml += `
-                <div class="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-2xl transition-colors">
-                    <span class="w-8 h-8 rounded-full bg-[#356665]/10 text-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sm">${amen.icon}</span></span>
-                    <span>${amen.name}</span>
-                </div>
-            `;
-        });
-        amenitiesGrid.innerHTML = amenHtml;
-
-        // Location pointers
-        document.getElementById("dist-downtown").innerText = activeProperty.distDowntown;
-        document.getElementById("dist-airport").innerText = activeProperty.distAirport;
-
-        // Updates active sidebar hearts and badges
-        updateFavoritesButtonUI();
-    }
-
-    // ACTIVE NAV STATE SWITCHER
-    function setActiveNavLink(activeId) {
-        const links = ["nav-accueil", "nav-galerie"];
-        links.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                if (id === activeId) {
-                    el.classList.add("text-primary", "dark:text-white", "border-b-2", "border-secondary");
-                    el.classList.remove("text-slate-500");
-                } else {
-                    el.classList.remove("text-primary", "dark:text-white", "border-b-2", "border-secondary");
-                    el.classList.add("text-slate-500");
-                }
+    // Newsletter signup
+    const newsletterBtn = document.querySelector('footer button.bg-emerald-600');
+    if (newsletterBtn) {
+        newsletterBtn.addEventListener('click', function() {
+            const input = this.previousElementSibling;
+            if (input.value) {
+                alert('Merci! ' + input.value + ' a été ajouté à notre liste.');
+                input.value = '';
             }
         });
     }
 
-    // PROPERTY DYNAMIC SWITCHER NAVIGATION
-    window.selectProperty = function(id) {
-        const prop = propertiesData.find(p => p.id === id);
-        if (!prop) return;
-        
-        activeProperty = prop;
-        
-        // Hide list, Show details
-        document.getElementById("list-view").classList.add("hidden");
-        const detailsView = document.getElementById("details-view");
-        detailsView.classList.remove("hidden");
-        
-        // Hydrate data smoothly
-        renderActiveDetails();
-        renderDiscoverGrid();
-        
-        // Close sidebar drawers
-        favSidebar.classList.add("hidden");
-        modalBackdrop.classList.add("hidden");
-
-        setActiveNavLink("nav-accueil");
-
-        // Scroll to details section smoothly
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    // "MORE LIKE THIS" DISCOVER GENERATOR (excluding active property)
-    function renderDiscoverGrid() {
-        const container = document.getElementById("more-like-this-grid");
-        const filterList = propertiesData.filter(p => p.id !== activeProperty.id);
-        
-        let html = "";
-        // Render maximum 3 recommendations
-        filterList.slice(0, 3).forEach(prop => {
-            html += `
-                <div onclick="selectProperty(${prop.id})" class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-150 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full cursor-pointer">
-                    <div class="relative h-[220px] overflow-hidden bg-slate-100 dark:bg-slate-950">
-                        <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                        <span class="absolute top-4 left-4 bg-primary text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full select-none shadow-sm">${prop.discoverTag}</span>
-                    </div>
-                    <div class="p-5 space-y-4">
-                        <div>
-                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest block">${prop.tagDistrict}</span>
-                            <h3 class="text-base font-extrabold text-primary dark:text-white mt-1 group-hover:text-secondary transition-colors">${prop.title}</h3>
-                        </div>
-                        <div class="flex justify-between items-center border-t border-slate-100 dark:border-slate-850 pt-4">
-                            <span class="text-sm font-black text-secondary dark:text-slate-400">${prop.price}</span>
-                            <div class="flex gap-3 text-[10px] font-extrabold text-slate-400">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">bed</span>${prop.beds} Bed</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">bathtub</span>${prop.baths} Bath</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
+    // WhatsApp buttons
+    Array.from(document.querySelectorAll('button')).filter(btn => btn.textContent.includes('WhatsApp')).forEach(btn => {
+        btn.addEventListener('click', function() {
+            window.open('https://wa.me/242', '_blank');
         });
-        container.innerHTML = html;
-    }
-
-    // MULTI-PAGE VIEW SWAPPING CONTROLLERS
-    window.showListView = function() {
-        document.getElementById("details-view").classList.add("hidden");
-        
-        const listView = document.getElementById("list-view");
-        listView.classList.remove("hidden");
-        
-        setActiveNavLink("nav-galerie");
-        
-        renderListViewGrid();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    window.setListCategory = function(cat) {
-        listCategoryFilter = cat;
-        
-        // Update category pills styling
-        document.querySelectorAll(".cat-tab").forEach(tab => {
-            if (tab.getAttribute("data-cat") === cat) {
-                tab.classList.add("bg-primary", "text-white");
-                tab.classList.remove("text-slate-500");
-            } else {
-                tab.classList.remove("bg-primary", "text-white");
-                tab.classList.add("text-slate-500");
-            }
-        });
-
-        renderListViewGrid();
-    };
-
-    function renderListViewGrid() {
-        const grid = document.getElementById("list-view-grid");
-        const filtered = propertiesData.filter(p => listCategoryFilter === "" ? true : p.type === listCategoryFilter);
-        
-        document.getElementById("list-results-counter").innerText = `${filtered.length} Résidence${filtered.length > 1 ? "s" : ""} Disponible${filtered.length > 1 ? "s" : ""}`;
-        
-        let html = "";
-        filtered.forEach(prop => {
-            const isFav = favorites.includes(prop.id);
-            const heartStyle = isFav ? "text-[#ba1a1a] fill-1" : "text-slate-400 hover:text-[#ba1a1a]";
-            const heartFill = isFav ? "font-variation-settings: 'FILL' 1" : "font-variation-settings: 'FILL' 0";
-
-            html += `
-                <div class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-150 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700 shadow-sm hover:shadow-md transition-all flex flex-col justify-between h-full">
-                    <div class="relative h-[220px] overflow-hidden bg-slate-100 dark:bg-slate-950">
-                        <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 cursor-pointer" onclick="selectProperty(${prop.id})" />
-                        <span class="absolute top-4 left-4 bg-primary text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full select-none shadow-sm">${prop.tagDistrict}</span>
-                        <!-- Custom grid heart -->
-                        <button onclick="toggleFavorite(${prop.id}); event.stopPropagation();" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-900/60 backdrop-blur-md ${heartStyle} cursor-pointer hover:scale-105 active:scale-95 shadow-sm">
-                            <span class="material-symbols-outlined text-base" style="${heartFill}">favorite</span>
-                        </button>
-                    </div>
-                    <div class="p-5 space-y-4">
-                        <div>
-                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest block">${prop.tagStatus}</span>
-                            <h3 class="text-base font-extrabold text-primary dark:text-white mt-1 group-hover:text-secondary transition-colors cursor-pointer" onclick="selectProperty(${prop.id})">${prop.title}</h3>
-                        </div>
-                        <div class="flex justify-between items-center border-t border-slate-100 dark:border-slate-850 pt-4">
-                            <span class="text-sm font-black text-secondary dark:text-slate-400">${prop.price}</span>
-                            <div class="flex gap-3 text-[10px] font-extrabold text-slate-400">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">bed</span>${prop.beds} Bed</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">bathtub</span>${prop.baths} Bath</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-        grid.innerHTML = html;
-    }
-
-    // TOUR BOOKING SCHEDULING (MODAL CONTROLS)
-    const tourModal = document.getElementById("tour-modal");
-    
-    function setupBookingModal() {
-        document.getElementById("tour-request-trigger").addEventListener("click", () => {
-            // Populate Modal property context
-            document.getElementById("tour-prop-img").src = activeProperty.images[0];
-            document.getElementById("tour-prop-title").innerText = activeProperty.title;
-            document.getElementById("tour-prop-price").innerText = activeProperty.price;
-
-            // Set default date as tomorrow
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            document.getElementById("tour-date").value = tomorrow.toISOString().split("T")[0];
-
-            modalBackdrop.classList.remove("hidden");
-            tourModal.classList.remove("hidden");
-        });
-
-        document.getElementById("tour-close-btn").addEventListener("click", () => {
-            tourModal.classList.add("hidden");
-            modalBackdrop.classList.add("hidden");
-        });
-
-        // Toggling time slot buttons
-        const slotButtons = document.querySelectorAll(".time-slot-btn");
-        slotButtons.forEach(btn => {
-            btn.addEventListener("click", () => {
-                slotButtons.forEach(b => {
-                    b.classList.remove("bg-primary", "text-white", "border-primary");
-                    b.classList.add("border-slate-200", "dark:border-slate-850", "text-slate-700", "dark:text-slate-350");
-                });
-                
-                btn.classList.add("bg-primary", "text-white", "border-primary");
-                btn.classList.remove("border-slate-200", "dark:border-slate-850", "text-slate-700", "dark:text-slate-350");
-                
-                document.getElementById("tour-time").value = btn.getAttribute("data-val");
-            });
-        });
-
-        // Form Submit simulation
-        document.getElementById("tour-form").addEventListener("submit", (e) => {
-            e.preventDefault();
-            
-            const dateVal = document.getElementById("tour-date").value;
-            const timeVal = document.getElementById("tour-time").value;
-            const nameVal = document.getElementById("tour-client-name").value;
-            
-            const tourInquiry = {
-                id: Date.now(),
-                propTitle: activeProperty.title,
-                date: new Date(dateVal).toLocaleDateString("fr-FR", {day:'numeric', month:'short', year:'numeric'}),
-                time: timeVal,
-                clientName: nameVal,
-                status: "Confirmé par l'Agent"
-            };
-
-            inquiries.unshift(tourInquiry);
-            localStorage.setItem("cerim_tours", JSON.stringify(inquiries));
-            
-            showToast("Tour Booked Successfully!", "Your private viewing appointment has been locked.");
-            
-            // Auto sign in user if not signed in to let them see active inquiries dashboard
-            if (!isLoggedIn) {
-                simulateLogin("gerard.bia@gmail.com");
-            } else {
-                updateDashboardToursUI();
-            }
-
-            // Close modal
-            tourModal.classList.add("hidden");
-            modalBackdrop.classList.add("hidden");
-
-            // Open User portal after 1.2s to showcase their dashboard inquiry
-            setTimeout(() => {
-                document.getElementById("auth-portal-btn").click();
-            }, 1200);
-        });
-
-        // WhatsApp simulated agent trigger
-        document.getElementById("agent-whatsapp-trigger").addEventListener("click", () => {
-            const message = encodeURIComponent(`Hello ${activeProperty.agentName}, I am very interested in the property "${activeProperty.title}" listed for ${activeProperty.price}. I would like to schedule a private tour.`);
-            const url = `https://wa.me/+242060000000?text=${message}`;
-            window.open(url, "_blank");
-            showToast("WhatsApp Redirect", `Connecting you instantly to ${activeProperty.agentName}...`);
-        });
-
-        // Favorite Toggle on Sidebar trigger
-        document.getElementById("sidebar-fav-btn").addEventListener("click", () => {
-            toggleFavorite(activeProperty.id);
-        });
-    }
-
-    // LIGHTBOX FULLSCREEN SLIDESHOW SYSTEM
-    const lightboxModal = document.getElementById("lightbox-modal");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const lightboxCounter = document.getElementById("lightbox-counter");
-    const lightboxCaption = document.getElementById("lightbox-caption");
-
-    window.openLightbox = function(index) {
-        activeLightboxIndex = index;
-        updateLightboxContent();
-        lightboxModal.classList.remove("hidden");
-    };
-
-    window.closeLightbox = function() {
-        lightboxModal.classList.add("hidden");
-    };
-
-    window.changeLightboxImage = function(direction) {
-        activeLightboxIndex += direction;
-        
-        // Infinite loop logic
-        if (activeLightboxIndex >= activeProperty.images.length) activeLightboxIndex = 0;
-        if (activeLightboxIndex < 0) activeLightboxIndex = activeProperty.images.length - 1;
-        
-        updateLightboxContent();
-    };
-
-    function updateLightboxContent() {
-        lightboxImg.src = activeProperty.images[activeLightboxIndex];
-        lightboxCounter.innerText = `Image ${activeLightboxIndex + 1} of ${activeProperty.images.length}`;
-        lightboxCaption.innerText = `${activeProperty.title} — Premium Angle ${activeLightboxIndex + 1}`;
-    }
-
-    // Key board listener to slide through photos
-    document.addEventListener("keydown", (e) => {
-        if (!lightboxModal.classList.contains("hidden")) {
-            if (e.key === "ArrowRight") changeLightboxImage(1);
-            if (e.key === "ArrowLeft") changeLightboxImage(-1);
-            if (e.key === "Escape") closeLightbox();
-        }
     });
-
-    // PORTAL SIGN IN & TOUR SCHEDULING DASHBOARD
-    const authModal = document.getElementById("auth-modal");
-
-    function setupAuthModal() {
-        const tabLogin = document.getElementById("tab-login-btn");
-        const tabDash = document.getElementById("tab-dashboard-btn");
-        const formPanel = document.getElementById("auth-form-panel");
-        const dashPanel = document.getElementById("auth-dashboard-panel");
-        const authBtnText = document.getElementById("auth-btn-text");
-
-        document.getElementById("auth-portal-btn").addEventListener("click", () => {
-            modalBackdrop.classList.remove("hidden");
-            authModal.classList.remove("hidden");
-
-            if (isLoggedIn) {
-                tabLogin.classList.add("hidden");
-                tabDash.classList.remove("hidden");
-                tabDash.classList.add("text-secondary", "border-b-2", "border-secondary");
-                formPanel.classList.add("hidden");
-                dashPanel.classList.remove("hidden");
-                updateDashboardToursUI();
-            } else {
-                tabLogin.classList.remove("hidden");
-                tabDash.classList.add("hidden");
-                formPanel.classList.remove("hidden");
-                dashPanel.classList.add("hidden");
-            }
-        });
-
-        document.getElementById("auth-close-btn").addEventListener("click", () => {
-            authModal.classList.add("hidden");
-            modalBackdrop.classList.add("hidden");
-        });
-
-        // Simulate Connection Login
-        document.getElementById("login-form").addEventListener("submit", (e) => {
-            e.preventDefault();
-            const email = document.getElementById("login-email").value;
-            simulateLogin(email);
-            showToast("Session ouverte", "Accès autorisé à l'Espace Cerim.");
-        });
-
-        // Logout
-        document.getElementById("dashboard-logout").addEventListener("click", () => {
-            isLoggedIn = false;
-            localStorage.setItem("cerim_signed_in", "false");
-            authBtnText.innerHTML = `<span class="material-symbols-outlined text-sm">lock</span>Sign In`;
-            
-            // Switch UI back to connection Form
-            tabLogin.classList.remove("hidden");
-            tabDash.classList.add("hidden");
-            formPanel.classList.remove("hidden");
-            dashPanel.classList.add("hidden");
-            
-            showToast("Session clôturée", "Fermeture sécurisée de l'espace client.");
-        });
-    }
-
-    function simulateLogin(email) {
-        isLoggedIn = true;
-        localStorage.setItem("cerim_signed_in", "true");
-        document.getElementById("auth-btn-text").innerHTML = `<span class="material-symbols-outlined text-sm">account_circle</span>Mon Compte`;
-
-        document.getElementById("tab-login-btn").classList.add("hidden");
-        
-        const tabDash = document.getElementById("tab-dashboard-btn");
-        tabDash.classList.remove("hidden");
-        tabDash.classList.add("text-secondary", "border-b-2", "border-secondary");
-        
-        document.getElementById("auth-form-panel").classList.add("hidden");
-        document.getElementById("auth-dashboard-panel").classList.remove("hidden");
-
-        updateDashboardToursUI();
-    }
-
-    function updateDashboardToursUI() {
-        const listEl = document.getElementById("dashboard-inquiries-list");
-        const countBadge = document.getElementById("visit-count");
-        countBadge.innerText = inquiries.length;
-
-        if (inquiries.length === 0) {
-            listEl.innerHTML = `
-                <div class="text-center py-6 text-slate-450 text-xs font-medium space-y-2">
-                    <span class="material-symbols-outlined text-3xl text-slate-300 dark:text-slate-700">calendar_today</span>
-                    <p>Aucune visite programmée pour le moment.</p>
-                </div>
-            `;
-            return;
-        }
-
-        let html = '<div class="space-y-3">';
-        inquiries.forEach(inq => {
-            html += `
-                <div class="p-3.5 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-150 dark:border-slate-800 text-xs transition-colors">
-                    <div class="flex justify-between items-center mb-1.5">
-                        <span class="font-extrabold text-primary dark:text-white">${inq.propTitle}</span>
-                        <span class="text-[8px] px-2 py-0.5 rounded-full font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-450">${inq.status}</span>
-                    </div>
-                    <p class="text-[10px] text-slate-450 dark:text-slate-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-                        <span class="material-symbols-outlined text-sm">schedule</span>
-                        Le ${inq.date} — ${inq.time}
-                    </p>
-                </div>
-            `;
-        });
-        html += '</div>';
-        listEl.innerHTML = html;
-    }
+});
 </script>
 </body>
 </html>

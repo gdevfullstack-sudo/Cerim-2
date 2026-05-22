@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Galerie Immobilière | Cerim.cg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #356665;
+            --primary-container: #051d33;
+            --on-primary-container: #7185a0;
+            --background: #fbf9fb;
+            --surface: #fbf9fb;
+            --surface-container-low: #f5f3f5;
+            --on-surface: #1b1c1d;
+            --on-surface-variant: #43474d;
+            --tertiary: #000000;
+            --outline: #74777d;
+            --outline-variant: #c4c6cd;
+            --error: #ba1a1a;
+            --error-container: #ffdad6;
+            --on-error-container: #93000a;
+            --surface-dim: #dbd9dc;
+            --surface-bright: #fbf9fb;
+            --surface-container: #efedef;
+            --surface-container-high: #e9e7ea;
+            --on-secondary: #ffffff;
+            --secondary-container: #b6e9e7;
+            --on-secondary-container: #3a6b69;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--background);
+            color: var(--on-surface);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--outline-variant);
+            box-shadow: 0 10px 30px rgba(0, 23, 45, 0.05);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--on-surface-variant);
+            text-decoration: none;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link.active {
+            font-weight: 700;
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .navbar-btn {
+            background-color: var(--primary-container);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .navbar-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Header Galerie */
+        .gallery-header-section {
+            margin-top: 110px;
+            padding: 40px 0 20px 0;
+        }
+
+        .gallery-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .gallery-subtitle {
+            color: var(--on-surface-variant);
+            font-size: 16px;
+        }
+
+        /* Barre de Filtres Rapides */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 32px 0;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--outline-variant);
+        }
+
+        .filter-chip {
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid var(--outline-variant);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--on-surface-variant);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-chip.active {
+            background-color: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .filter-chip:hover:not(.active) {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* Galerie de Cartes */
+        .properties-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            padding-bottom: 80px;
+        }
+
+        @media (min-width: 768px) {
+            .properties-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .properties-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .property-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 23, 45, 0.04);
+            border: 1px solid var(--outline-variant);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 23, 45, 0.08);
+        }
+
+        .property-image-box {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .property-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .property-card:hover .property-image-box img {
+            transform: scale(1.06);
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .property-badge.sale {
+            background-color: var(--secondary-container);
+            color: var(--on-secondary-container);
+        }
+
+        .property-badge.rent {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .property-price {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            color: white;
+            font-weight: 800;
+            font-size: 22px;
+            background: rgba(5, 29, 51, 0.6);
+            padding: 4px 14px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+        }
+
+        .property-price span {
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .property-content {
+            padding: 24px;
+        }
+
+        .property-city {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--secondary);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .property-city .material-symbols-outlined {
+            font-size: 16px;
+        }
+
+        .property-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .property-address {
+            font-size: 14px;
+            color: var(--on-surface-variant);
+            margin-bottom: 20px;
+        }
+
+        /* Grille des caractéristiques intérieures */
+        .property-specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--outline-variant);
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--on-surface-variant);
+        }
+
+        .spec-item .material-symbols-outlined {
+            font-size: 20px;
+            color: var(--secondary);
+        }
+
+        .spec-label {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .property-detail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 20px;
+            color: var(--secondary);
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .property-detail-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-container);
+            color: white;
+            padding: 80px 24px 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-container);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: var(--on-primary-container);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: var(--on-primary-container);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: white;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre de Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-200/20 shadow-[0px_10px_30px_rgba(0,23,45,0.05)]" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-[1280px] mx-auto">
+    <a href="index-new.html" class="text-2xl font-black tracking-tighter text-slate-900" style="text-decoration:none;font-family:'Manrope',sans-serif;">Cerim.cg</a>
+    <div class="hidden md:flex gap-8 items-center">
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="index-new.html" style="font-family:'Manrope',sans-serif;">Accueil</a>
+    <a class="text-sm font-bold tracking-tight text-emerald-700 pb-1 border-b-2 border-emerald-700" href="galerie.html" style="font-family:'Manrope',sans-serif;">Galerie</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="panier.html" style="font-family:'Manrope',sans-serif;">Panier</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="#" style="font-family:'Manrope',sans-serif;">À propos</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="contact.html" style="font-family:'Manrope',sans-serif;">Contact</a>
+    </div>
+    <button class="text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform" style="background-color:#051d33;font-family:'Manrope',sans-serif;">Publier un bien</button>
+    </div>
+    </nav>
+
+    <!-- En-tête de la Galerie -->
+    <header class="gallery-header-section">
+        <div class="container">
+            <h1 class="gallery-title">Galerie des Biens</h1>
+            <p class="gallery-subtitle">Découvrez notre collection exclusive de villas et appartements d'exception au Congo.</p>
+            
+            <!-- Jetons de Filtrage Rapide -->
+            <div class="filter-bar">
+                <button class="filter-chip active">Tout afficher</button>
+                <button class="filter-chip">Brazzaville</button>
+                <button class="filter-chip">Pointe-Noire</button>
+                <button class="filter-chip">Kintélé</button>
+                <button class="filter-chip">Villas</button>
+                <button class="filter-chip">Appartements</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Galerie d'images -->
+    <main class="container">
+        <div class="properties-gallery">
+            
+            <!-- Carte 1: Villa Prestige -->
+            <div class="property-card">
+                <div class="property-image-box">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80" alt="Villa"/>
+                    <span class="property-badge sale">Achat</span>
+                    <div class="property-price">480.000.000 FCFA</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-city"><span class="material-symbols-outlined">location_on</span>Pointe-Noire</div>
+                    <h3 class="property-title">Villa Impériale Côte Sauvage</h3>
+                    <p class="property-address">Avenue de la Côte Sauvage</p>
+                    
+                    <div class="property-specs-grid">
+                        <div class="spec-item"><span class="material-symbols-outlined">bed</span><span class="spec-label">Chambre :</span> <span class="spec-value">5</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">chair</span><span class="spec-label">Salon :</span> <span class="spec-value">2</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">bathtub</span><span class="spec-label">Sdb :</span> <span class="spec-value">4</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">square_foot</span><span class="spec-label">Superficie :</span> <span class="spec-value">520m²</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 2: Appartement Horizon -->
+            <div class="property-card">
+                <div class="property-image-box">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Appartement"/>
+                    <span class="property-badge rent">Location</span>
+                    <div class="property-price">1.200.000 FCFA <span>/mois</span></div>
+                </div>
+                <div class="property-content">
+                    <div class="property-city"><span class="material-symbols-outlined">location_on</span>Brazzaville</div>
+                    <h3 class="property-title">Appartement Horizon Fleuve</h3>
+                    <p class="property-address">Quartier Centre-ville, Face Fleuve</p>
+                    
+                    <div class="property-specs-grid">
+                        <div class="spec-item"><span class="material-symbols-outlined">bed</span><span class="spec-label">Chambre :</span> <span class="spec-value">3</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">chair</span><span class="spec-label">Salon :</span> <span class="spec-value">1</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">bathtub</span><span class="spec-label">Sdb :</span> <span class="spec-value">2</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">square_foot</span><span class="spec-label">Superficie :</span> <span class="spec-value">165m²</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 3: Villa Moderne Kintélé -->
+            <div class="property-card">
+                <div class="property-image-box">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Villa"/>
+                    <span class="property-badge sale">Achat</span>
+                    <div class="property-price">250.000.000 FCFA</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-city"><span class="material-symbols-outlined">location_on</span>Kintélé</div>
+                    <h3 class="property-title">Villa Lumineuse du Complexe</h3>
+                    <p class="property-address">Zone Résidentielle Neuve, Kintélé</p>
+                    
+                    <div class="property-specs-grid">
+                        <div class="spec-item"><span class="material-symbols-outlined">bed</span><span class="spec-label">Chambre :</span> <span class="spec-value">4</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">chair</span><span class="spec-label">Salon :</span> <span class="spec-value">1</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">bathtub</span><span class="spec-label">Sdb :</span> <span class="spec-value">3</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">square_foot</span><span class="spec-label">Superficie :</span> <span class="spec-value">340m²</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 4: Duplex Émeraude -->
+            <div class="property-card">
+                <div class="property-image-box">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Duplex"/>
+                    <span class="property-badge sale">Achat</span>
+                    <div class="property-price">380.000.000 FCFA</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-city"><span class="material-symbols-outlined">location_on</span>Pointe-Noire</div>
+                    <h3 class="property-title">Duplex Émeraude Total</h3>
+                    <p class="property-address">Quartier Total, Proche Commerces</p>
+                    
+                    <div class="property-specs-grid">
+                        <div class="spec-item"><span class="material-symbols-outlined">bed</span><span class="spec-label">Chambre :</span> <span class="spec-value">4</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">chair</span><span class="spec-label">Salon :</span> <span class="spec-value">2</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">bathtub</span><span class="spec-label">Sdb :</span> <span class="spec-value">3</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">square_foot</span><span class="spec-label">Superficie :</span> <span class="spec-value">290m²</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 5: Penthouse Djiri -->
+            <div class="property-card">
+                <div class="property-image-box">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Penthouse"/>
+                    <span class="property-badge rent">Location</span>
+                    <div class="property-price">850.000 FCFA <span>/mois</span></div>
+                </div>
+                <div class="property-content">
+                    <div class="property-city"><span class="material-symbols-outlined">location_on</span>Brazzaville</div>
+                    <h3 class="property-title">Résidence Haut Standing Djiri</h3>
+                    <p class="property-address">Arrondissement 9, Djiri</p>
+                    
+                    <div class="property-specs-grid">
+                        <div class="spec-item"><span class="material-symbols-outlined">bed</span><span class="spec-label">Chambre :</span> <span class="spec-value">2</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">chair</span><span class="spec-label">Salon :</span> <span class="spec-value">1</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">bathtub</span><span class="spec-label">Sdb :</span> <span class="spec-value">2</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">square_foot</span><span class="spec-label">Superficie :</span> <span class="spec-value">130m²</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte 6: Villa Bas-Congo -->
+            <div class="property-card">
+                <div class="property-image-box">
+                    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80" alt="Villa Océan"/>
+                    <span class="property-badge sale">Achat</span>
+                    <div class="property-price">510.000.000 FCFA</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-city"><span class="material-symbols-outlined">location_on</span>Pointe-Noire</div>
+                    <h3 class="property-title">Villa Panoramique Vue Océan</h3>
+                    <p class="property-address">Quartier Och, Pointe-Noire</p>
+                    
+                    <div class="property-specs-grid">
+                        <div class="spec-item"><span class="material-symbols-outlined">bed</span><span class="spec-label">Chambre :</span> <span class="spec-value">6</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">chair</span><span class="spec-label">Salon :</span> <span class="spec-value">2</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">bathtub</span><span class="spec-label">Sdb :</span> <span class="spec-value">5</span></div>
+                        <div class="spec-item"><span class="material-symbols-outlined">square_foot</span><span class="spec-label">Superficie :</span> <span class="spec-value">600m²</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Pied de Page (Footer) -->
+    <footer class="w-full pt-20 pb-10 bg-slate-950 border-t border-slate-800">
+    <div class="max-w-[1280px] mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div>
+    <span class="text-xl font-bold text-white mb-4 block" style="font-family:'Manrope',sans-serif;">Cerim.cg</span>
+    <p class="text-sm leading-relaxed text-slate-400" style="font-family:'Manrope',sans-serif;">La référence de l'immobilier premium au Congo. Sécurité, élégance et transparence.</p>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Navigation</h4>
+    <ul class="space-y-4">
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Accueil</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Galerie</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Acheter</a></li>
+    </ul>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Liens Utiles</h4>
+    <ul class="space-y-4">
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html#agents" style="font-family:'Manrope',sans-serif;text-decoration:none;">Agents</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="#" style="font-family:'Manrope',sans-serif;text-decoration:none;">À propos</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="contact.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Contact</a></li>
+    </ul>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Newsletter</h4>
+    <p class="text-sm text-slate-400 mb-4" style="font-family:'Manrope',sans-serif;">Recevez les dernières opportunités.</p>
+    <div class="flex">
+    <input class="bg-slate-900 border-none rounded-l-lg px-4 py-2 w-full text-white text-sm focus:ring-1 focus:ring-emerald-400" placeholder="Votre email" type="email" style="font-family:'Manrope',sans-serif;"/>
+    <button class="bg-emerald-600 text-white px-4 py-2 rounded-r-lg"><span class="material-symbols-outlined">send</span></button>
+    </div>
+    </div>
+    </div>
+    <div class="max-w-[1280px] mx-auto px-8 mt-20 pt-10 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-sm leading-relaxed text-slate-400" style="font-family:'Manrope',sans-serif;">© 2026 Cerim.cg. Tous droits réservés.</p>
+    <div class="flex gap-6">
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">share</span></a>
+    </div>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryIds = [
+                'villa-imperiale',
+                'appartement-horizon',
+                'villa-lumineuse-kintele',
+                'duplex-emeraude-total',
+                'residence-djiri',
+                'villa-panoramique-ocean'
+            ];
+
+            document.querySelectorAll('.property-card').forEach((card, index) => {
+                const id = galleryIds[index];
+                const url = `detail-property.html?id=${id}`;
+                const content = card.querySelector('.property-content');
+
+                card.setAttribute('role', 'link');
+                card.setAttribute('tabindex', '0');
+                card.dataset.propertyId = id;
+
+                if (content && !content.querySelector('.property-detail-link')) {
+                    content.insertAdjacentHTML('beforeend', `
+                        <a class="property-detail-link" href="${url}">
+                            Voir détails
+                            <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span>
+                        </a>
+                    `);
+                }
+
+                card.addEventListener('click', (event) => {
+                    if (event.target.closest('a')) return;
+                    window.location.href = url;
+                });
+
+                card.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') window.location.href = url;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

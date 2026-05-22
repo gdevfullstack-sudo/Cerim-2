@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact | Cerim.cg</title>
+    <meta name="description" content="Contactez Cerim.cg, votre partenaire immobilier de luxe en République du Congo. Nos conseillers sont disponibles pour vous accompagner."/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #356665;
+            --primary-container: #051d33;
+            --on-primary-container: #7185a0;
+            --background: #fbf9fb;
+            --surface: #fbf9fb;
+            --surface-container-low: #f5f3f5;
+            --on-surface: #1b1c1d;
+            --on-surface-variant: #43474d;
+            --tertiary: #000000;
+            --outline: #74777d;
+            --outline-variant: #c4c6cd;
+            --error: #ba1a1a;
+            --error-container: #ffdad6;
+            --on-error-container: #93000a;
+            --surface-dim: #dbd9dc;
+            --surface-bright: #fbf9fb;
+            --surface-container: #efedef;
+            --surface-container-high: #e9e7ea;
+            --on-secondary: #ffffff;
+            --secondary-container: #b6e9e7;
+            --on-secondary-container: #3a6b69;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--background);
+            color: var(--on-surface);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--outline-variant);
+            box-shadow: 0 10px 30px rgba(0, 23, 45, 0.05);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--on-surface-variant);
+            text-decoration: none;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link.active {
+            font-weight: 700;
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .navbar-btn {
+            background-color: var(--primary-container);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .navbar-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .contact-hero {
+            margin-top: 80px;
+            padding: 60px 0 40px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border: 1px solid var(--secondary);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            max-width: 600px;
+        }
+
+        .contact-hero p {
+            color: var(--on-surface-variant);
+            font-size: 16px;
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            padding-bottom: 80px;
+        }
+
+        @media (min-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 48px;
+            }
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 32px;
+            border: 1px solid var(--outline-variant);
+            box-shadow: 0 10px 40px rgba(0, 23, 45, 0.04);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--on-surface-variant);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--outline-variant);
+            border-radius: 14px;
+            font-size: 14px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            color: var(--on-surface);
+            background: white;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--outline);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(53, 102, 101, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary-container);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Manrope', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(5, 29, 51, 0.2);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* Info Cards Stack */
+        .info-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid var(--outline-variant);
+            box-shadow: 0 4px 16px rgba(0, 23, 45, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 23, 45, 0.07);
+        }
+
+        .info-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--surface-container-low);
+            border: 1px solid var(--outline-variant);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .info-card-icon .material-symbols-outlined {
+            font-size: 22px;
+            color: var(--secondary);
+        }
+
+        .info-card h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            color: var(--on-surface-variant);
+            line-height: 1.6;
+        }
+
+        .info-card .contact-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Availability banner inside info card */
+        .availability-banner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 100px;
+            margin-top: 16px;
+        }
+
+        .availability-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+
+        .availability-banner .overlay-text {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* MAP SECTION */
+        .map-section {
+            padding-bottom: 80px;
+        }
+
+        .map-wrapper {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            height: 500px;
+            border: 1px solid var(--outline-variant);
+            box-shadow: 0 20px 60px rgba(0, 23, 45, 0.08);
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .map-info-overlay {
+            position: absolute;
+            bottom: 32px;
+            left: 32px;
+            z-index: 10;
+            background: white;
+            border-radius: 20px;
+            padding: 24px 28px;
+            max-width: 320px;
+            box-shadow: 0 16px 48px rgba(0, 23, 45, 0.12);
+            border: 1px solid var(--outline-variant);
+        }
+
+        .map-info-overlay h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .map-info-overlay p {
+            font-size: 13px;
+            color: var(--on-surface-variant);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .map-info-overlay .directions-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .map-info-overlay .directions-link:hover {
+            gap: 10px;
+        }
+
+        /* Custom Leaflet Marker Pulse */
+        .pulse-marker {
+            width: 24px;
+            height: 24px;
+            background: var(--secondary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(53, 102, 101, 0.4);
+            position: relative;
+        }
+
+        .pulse-marker::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(53, 102, 101, 0.2);
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-container);
+            color: white;
+            padding: 80px 24px 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-container);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: var(--on-primary-container);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: var(--on-primary-container);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: white;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 100;
+            background: white;
+            border-radius: 16px;
+            padding: 16px 24px;
+            box-shadow: 0 16px 48px rgba(0, 23, 45, 0.15);
+            border: 1px solid var(--outline-variant);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(120%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            max-width: 380px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #dcfce7;
+            color: #16a34a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .toast h4 {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .toast p {
+            font-size: 12px;
+            color: var(--on-surface-variant);
+            margin-top: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+
+        /* Mobile Nav Toggle */
+        .mobile-nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: var(--on-surface);
+        }
+
+        @media (min-width: 768px) {
+            .mobile-nav-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid var(--outline-variant);
+            box-shadow: 0 10px 30px rgba(0, 23, 45, 0.08);
+            z-index: 49;
+            padding: 16px 24px;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu .nav-link {
+            padding: 10px 0;
+            border-bottom: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre de Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-200/20 shadow-[0px_10px_30px_rgba(0,23,45,0.05)]" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-[1280px] mx-auto">
+    <a href="index-new.html" class="text-2xl font-black tracking-tighter text-slate-900" style="text-decoration:none;font-family:'Manrope',sans-serif;">Cerim.cg</a>
+    <div class="hidden md:flex gap-8 items-center">
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="index-new.html" style="font-family:'Manrope',sans-serif;">Accueil</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="galerie.html" style="font-family:'Manrope',sans-serif;">Galerie</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="panier.html" style="font-family:'Manrope',sans-serif;">Panier</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="#" style="font-family:'Manrope',sans-serif;">À propos</a>
+    <a class="text-sm font-bold tracking-tight text-emerald-700 pb-1 border-b-2 border-emerald-700" href="contact.html" style="font-family:'Manrope',sans-serif;">Contact</a>
+    </div>
+    <button class="text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform" style="background-color:#051d33;font-family:'Manrope',sans-serif;">Publier un bien</button>
+    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="contact-hero">
+        <div class="container">
+            <div class="hero-badge animate-in delay-1">
+                <span class="material-symbols-outlined" style="font-size: 16px;">mail</span>
+                Contactez-nous
+            </div>
+            <h1 class="animate-in delay-2">Connectez-vous à l'Excellence Architecturale.</h1>
+            <p class="animate-in delay-3">Nos conseillers sont disponibles pour vous guider à travers le paysage immobilier congolais avec transparence et raffinement.</p>
+        </div>
+    </header>
+
+    <!-- Contact Grid -->
+    <main>
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left: Form -->
+                <div class="form-card animate-in delay-3">
+                    <form id="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="fullname">Nom complet</label>
+                                <input class="form-input" type="text" id="fullname" placeholder="Jean-Pierre Kabila" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Adresse e-mail</label>
+                                <input class="form-input" type="email" id="email" placeholder="jp.kabila@exemple.com" required />
+                            </div>
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="subject">Objet</label>
+                            <input class="form-input" type="text" id="subject" placeholder="Demande concernant une villa à Brazzaville" required />
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="message">Message</label>
+                            <textarea class="form-textarea" id="message" placeholder="Décrivez vos besoins immobiliers..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span class="material-symbols-outlined" style="font-size: 20px;">send</span>
+                            Envoyer la Demande
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Info Cards -->
+                <div class="info-stack">
+                    <!-- Headquarters -->
+                    <div class="info-card animate-in delay-3">
+                        <div class="info-card-icon">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <h3>Siège Social</h3>
+                        <p>Avenue de la Paix, Centre-ville<br/>Brazzaville, République du Congo</p>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="info-card animate-in delay-4">
+                        <div class="info-card-icon">
+                            <span class="material-symbols-outlined">call</span>
+                        </div>
+                        <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--on-surface-variant); margin-bottom: 4px;">Téléphone</p>
+                        <span class="contact-value">+242 06 483 43 82</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-card animate-in delay-4">
+                        <div class="info-card-icon">
+                            <span class="material-symbols-outlined">mail</span>
+                        </div>
+                        <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--on-surface-variant); margin-bottom: 4px;">Email</p>
+                        <a href="mailto:contact@cerim.cg" class="contact-value" style="text-decoration: none; color: var(--primary);">contact@cerim.cg</a>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="info-card animate-in delay-5" style="padding-bottom: 16px;">
+                        <div class="availability-banner">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Interior luxury"/>
+                            <div class="overlay-text">Disponible 24h/7 pour nos clients premium.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="container map-section animate-in delay-5">
+            <div class="map-wrapper">
+                <div id="map"></div>
+                <div class="map-info-overlay">
+                    <h3>
+                        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--secondary);">apartment</span>
+                        Visitez nos Bureaux
+                    </h3>
+                    <p>Découvrez notre portfolio en personne au cœur du district financier de la capitale congolaise.</p>
+                    <a href="https://www.google.com/maps/place/Brazzaville,+Congo" target="_blank" class="directions-link">
+                        Obtenir l'itinéraire
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de Page (Footer) -->
+    <footer class="w-full pt-20 pb-10 bg-slate-950 border-t border-slate-800">
+    <div class="max-w-[1280px] mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div>
+    <span class="text-xl font-bold text-white mb-4 block" style="font-family:'Manrope',sans-serif;">Cerim.cg</span>
+    <p class="text-sm leading-relaxed text-slate-400" style="font-family:'Manrope',sans-serif;">La référence de l'immobilier premium au Congo. Sécurité, élégance et transparence.</p>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Navigation</h4>
+    <ul class="space-y-4">
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Accueil</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Galerie</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Acheter</a></li>
+    </ul>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Liens Utiles</h4>
+    <ul class="space-y-4">
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html#agents" style="font-family:'Manrope',sans-serif;text-decoration:none;">Agents</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="#" style="font-family:'Manrope',sans-serif;text-decoration:none;">À propos</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="contact.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Contact</a></li>
+    </ul>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Newsletter</h4>
+    <p class="text-sm text-slate-400 mb-4" style="font-family:'Manrope',sans-serif;">Recevez les dernières opportunités.</p>
+    <div class="flex">
+    <input class="bg-slate-900 border-none rounded-l-lg px-4 py-2 w-full text-white text-sm focus:ring-1 focus:ring-emerald-400" placeholder="Votre email" type="email" style="font-family:'Manrope',sans-serif;"/>
+    <button class="bg-emerald-600 text-white px-4 py-2 rounded-r-lg"><span class="material-symbols-outlined">send</span></button>
+    </div>
+    </div>
+    </div>
+    <div class="max-w-[1280px] mx-auto px-8 mt-20 pt-10 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-sm leading-relaxed text-slate-400" style="font-family:'Manrope',sans-serif;">© 2026 Cerim.cg. Tous droits réservés.</p>
+    <div class="flex gap-6">
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">share</span></a>
+    </div>
+    </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast-notif">
+        <div class="toast-icon">
+            <span class="material-symbols-outlined">check_circle</span>
+        </div>
+        <div>
+            <h4 id="toast-title">Message envoyé !</h4>
+            <p id="toast-desc">Nous reviendrons vers vous sous 24h.</p>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // ========================
+        // INTERACTIVE MAP — REPUBLIC OF CONGO (Congo-Brazzaville)
+        // ========================
+        // Brazzaville coordinates: -4.2634, 15.2429
+        // Republic of Congo bounding box approx: lat -5 to 4, lng 11 to 19
+
+        const map = L.map('map', {
+            center: [-4.2634, 15.2429],
+            zoom: 6,
+            scrollWheelZoom: false,
+            zoomControl: true
+        });
+
+        // Premium tile layer with subtle styling
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Custom marker icon using a div with pulse effect
+        const pulseIcon = L.divIcon({
+            className: '',
+            html: '<div class="pulse-marker"></div>',
+            iconSize: [24, 24],
+            iconAnchor: [12, 12]
+        });
+
+        // Brazzaville marker (Headquarters)
+        const brazzavilleMarker = L.marker([-4.2634, 15.2429], { icon: pulseIcon }).addTo(map);
+        brazzavilleMarker.bindPopup(
+            '<div style="font-family: Manrope, sans-serif; padding: 8px;">' +
+            '<strong style="font-size: 14px; color: #051d33;">Cerim.cg — Siège Social</strong><br/>' +
+            '<span style="font-size: 12px; color: #43474d;">Avenue de la Paix, Centre-ville</span><br/>' +
+            '<span style="font-size: 12px; color: #43474d;">Brazzaville, République du Congo</span><br/>' +
+            '<span style="font-size: 11px; color: #356665; font-weight: 700;">+242 06 483 43 82</span>' +
+            '</div>',
+            { className: 'custom-popup', maxWidth: 280 }
+        );
+
+        // Pointe-Noire marker (Branch Office)
+        const pnIcon = L.divIcon({
+            className: '',
+            html: '<div style="width:16px;height:16px;background:#356665;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(53,102,101,0.3);"></div>',
+            iconSize: [16, 16],
+            iconAnchor: [8, 8]
+        });
+
+        const pointeNoireMarker = L.marker([-4.7761, 11.8636], { icon: pnIcon }).addTo(map);
+        pointeNoireMarker.bindPopup(
+            '<div style="font-family: Manrope, sans-serif; padding: 8px;">' +
+            '<strong style="font-size: 14px; color: #051d33;">Cerim.cg — Bureau Pointe-Noire</strong><br/>' +
+            '<span style="font-size: 12px; color: #43474d;">Avenue Charles de Gaulle</span><br/>' +
+            '<span style="font-size: 12px; color: #43474d;">Pointe-Noire, République du Congo</span>' +
+            '</div>',
+            { className: 'custom-popup', maxWidth: 280 }
+        );
+
+        // Republic of Congo border outline (simplified GeoJSON)
+        const congoBorder = {
+            "type": "Feature",
+            "properties": { "name": "République du Congo" },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [11.09, -3.98], [11.14, -3.68], [11.83, -3.43], [11.86, -3.07],
+                    [11.93, -2.79], [12.04, -2.60], [12.18, -2.41], [12.47, -2.33],
+                    [12.58, -1.83], [12.65, -1.71], [13.00, -1.63], [13.26, -1.61],
+                    [13.54, -1.40], [14.15, -1.03], [14.24, -0.89], [14.33, -0.66],
+                    [14.15, -0.47], [13.87, -0.30], [13.86, 0.04], [14.05, 0.42],
+                    [14.33, 0.62], [14.43, 0.85], [14.58, 1.06], [14.67, 1.35],
+                    [14.88, 1.48], [15.05, 1.66], [15.26, 1.96], [15.58, 2.13],
+                    [15.78, 2.27], [16.01, 2.27], [16.18, 2.27], [16.21, 1.96],
+                    [16.37, 1.77], [16.57, 1.67], [16.78, 1.63], [16.95, 1.28],
+                    [17.14, 1.10], [17.27, 0.89], [17.37, 0.70], [17.54, 0.42],
+                    [17.64, 0.23], [17.73, -0.05], [17.82, -0.34], [17.78, -0.57],
+                    [17.63, -0.71], [17.51, -0.89], [17.47, -1.09], [17.36, -1.32],
+                    [17.25, -1.63], [17.07, -1.89], [16.87, -2.06], [16.71, -2.23],
+                    [16.54, -2.56], [16.47, -2.83], [16.35, -3.13], [16.21, -3.35],
+                    [16.13, -3.52], [16.03, -3.69], [15.87, -3.86], [15.71, -3.97],
+                    [15.54, -4.11], [15.37, -4.22], [15.24, -4.32], [15.07, -4.43],
+                    [14.87, -4.51], [14.73, -4.58], [14.58, -4.69], [14.43, -4.75],
+                    [14.30, -4.79], [14.15, -4.82], [13.97, -4.79], [13.84, -4.82],
+                    [13.67, -4.82], [13.50, -4.79], [13.30, -4.66], [13.07, -4.62],
+                    [12.83, -4.58], [12.62, -4.54], [12.35, -4.53], [12.13, -4.58],
+                    [11.87, -4.55], [11.73, -4.52], [11.56, -4.43], [11.37, -4.32],
+                    [11.14, -4.18], [11.09, -3.98]
+                ]]
+            }
+        };
+
+        L.geoJSON(congoBorder, {
+            style: {
+                color: '#356665',
+                weight: 2.5,
+                opacity: 0.7,
+                fillColor: '#356665',
+                fillOpacity: 0.06,
+                dashArray: '6, 4'
+            }
+        }).addTo(map).bindTooltip('République du Congo', {
+            permanent: false,
+            direction: 'center',
+            className: 'country-label'
+        });
+
+        // Key cities labels
+        const cities = [
+            { name: 'Brazzaville', lat: -4.2634, lng: 15.2429 },
+            { name: 'Pointe-Noire', lat: -4.7761, lng: 11.8636 },
+            { name: 'Dolisie', lat: -4.1961, lng: 12.6689 },
+            { name: 'Ouesso', lat: 1.6131, lng: 16.0517 },
+            { name: 'Owando', lat: -0.4867, lng: 15.9017 }
+        ];
+
+        cities.forEach(city => {
+            if (city.name !== 'Brazzaville' && city.name !== 'Pointe-Noire') {
+                L.circleMarker([city.lat, city.lng], {
+                    radius: 4,
+                    color: '#051d33',
+                    fillColor: '#051d33',
+                    fillOpacity: 0.6,
+                    weight: 1
+                }).addTo(map).bindTooltip(city.name, {
+                    permanent: false,
+                    direction: 'right',
+                    offset: [8, 0]
+                });
+            }
+        });
+
+        // ========================
+        // FORM SUBMISSION
+        // ========================
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Store inquiry in localStorage
+            const inquiries = JSON.parse(localStorage.getItem('cerim_contact_inquiries') || '[]');
+            inquiries.push({
+                id: Date.now(),
+                name, email, subject, message,
+                date: new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }),
+                status: 'Reçu'
+            });
+            localStorage.setItem('cerim_contact_inquiries', JSON.stringify(inquiries));
+
+            // Show toast
+            showToast('Message envoyé !', `Merci ${name.split(' ')[0]}, nous reviendrons vers vous sous 24h.`);
+
+            // Reset form
+            document.getElementById('contact-form').reset();
+        }
+
+        // ========================
+        // TOAST NOTIFICATIONS
+        // ========================
+        function showToast(title, desc) {
+            const toast = document.getElementById('toast-notif');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-desc').textContent = desc;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 5000);
+        }
+
+        // ========================
+        // MOBILE MENU
+        // ========================
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

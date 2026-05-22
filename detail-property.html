@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Détails de la Propriété | Cerim.cg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #356665;
+            --primary-container: #051d33;
+            --on-primary-container: #7185a0;
+            --background: #fbf9fb;
+            --surface: #fbf9fb;
+            --surface-container-low: #f5f3f5;
+            --on-surface: #1b1c1d;
+            --on-surface-variant: #43474d;
+            --tertiary: #000000;
+            --outline: #74777d;
+            --outline-variant: #c4c6cd;
+            --error: #ba1a1a;
+            --error-container: #ffdad6;
+            --on-error-container: #93000a;
+            --surface-dim: #dbd9dc;
+            --surface-bright: #fbf9fb;
+            --surface-container: #efedef;
+            --surface-container-high: #e9e7ea;
+            --on-secondary: #ffffff;
+            --secondary-container: #b6e9e7;
+            --on-secondary-container: #3a6b69;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--background);
+            color: var(--on-surface);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--outline-variant);
+            box-shadow: 0 10px 30px rgba(0, 23, 45, 0.05);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--on-surface-variant);
+            text-decoration: none;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link.active {
+            font-weight: 700;
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .navbar-btn {
+            background-color: var(--primary-container);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .navbar-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Main Content */
+        .detail-container {
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .breadcrumb-separator {
+            color: var(--outline);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            margin-bottom: 40px;
+        }
+
+        .gallery-main {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--surface-container);
+            margin-bottom: 24px;
+        }
+
+        .gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-thumb {
+            width: 100%;
+            height: 120px;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-thumb.active {
+            border-color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(53, 102, 101, 0.2);
+        }
+
+        .gallery-thumb:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Grid Layout for Details */
+        @media (min-width: 768px) {
+            .content-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Property Details */
+        .property-details {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .detail-title-section {
+            flex: 1;
+        }
+
+        .property-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--on-surface-variant);
+            margin-bottom: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .property-location span {
+            font-size: 16px;
+        }
+
+        .detail-header h1 {
+            font-size: 40px;
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .property-type {
+            display: inline-block;
+            background: var(--secondary-container);
+            color: var(--on-secondary-container);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Price and Badge */
+        .price-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: right;
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            align-self: flex-end;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .property-price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        /* Specifications Grid */
+        .specs-section {
+            background: var(--surface-container-low);
+            padding: 32px 24px;
+            border-radius: 16px;
+        }
+
+        .specs-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 24px;
+        }
+
+        .spec-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 16px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--outline-variant);
+            align-items: center;
+            text-align: center;
+        }
+
+        .spec-card-icon {
+            font-size: 32px;
+            color: var(--secondary);
+        }
+
+        .spec-card-label {
+            font-size: 12px;
+            color: var(--on-surface-variant);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .spec-card-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Description Section */
+        .description-section {
+            border-top: 1px solid var(--outline-variant);
+            padding-top: 32px;
+            margin-top: 32px;
+        }
+
+        .description-section h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .description-text {
+            color: var(--on-surface-variant);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* Features List */
+        .features-section {
+            border-top: 1px solid var(--outline-variant);
+            padding-top: 32px;
+            margin-top: 32px;
+        }
+
+        .features-section h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--surface-container-low);
+            border-radius: 12px;
+        }
+
+        .feature-item span:first-child {
+            font-size: 22px;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .feature-item span:last-child {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                order: -1;
+            }
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--surface-container-low);
+            padding: 28px 24px;
+            border-radius: 16px;
+            border: 1px solid var(--outline-variant);
+        }
+
+        .contact-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .agent-info {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .agent-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--secondary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .agent-details h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .agent-details p {
+            font-size: 13px;
+            color: var(--on-surface-variant);
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-contact {
+            padding: 14px 16px;
+            border: 1px solid var(--outline-variant);
+            background: white;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: white;
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* Add to Cart Button */
+        .add-to-cart-section {
+            background: white;
+            padding: 28px 24px;
+            border-radius: 16px;
+            border: 1px solid var(--outline-variant);
+            position: sticky;
+            top: 100px;
+        }
+
+        .add-to-cart-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .price-summary {
+            background: var(--surface-container-low);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .price-row.total {
+            border-top: 1px solid var(--outline-variant);
+            padding-top: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 0;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            background: var(--primary-container);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .btn-add-cart:hover {
+            box-shadow: 0 8px 24px rgba(5, 29, 51, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Share Section */
+        .share-section {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--outline-variant);
+            text-align: center;
+        }
+
+        .share-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--surface-container-low);
+            border: 1px solid var(--outline-variant);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .share-btn:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        /* Measurements Detail */
+        .measurements-section {
+            background: transparent;
+            padding: 0;
+            border-radius: 12px;
+            margin-top: 32px;
+        }
+
+        .measurements-section h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .measurements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .measurement-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--outline-variant);
+            text-align: center;
+        }
+
+        .measurement-label {
+            font-size: 11px;
+            color: var(--on-surface-variant);
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .measurement-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .detail-header {
+                flex-direction: column;
+            }
+
+            .price-section {
+                text-align: left;
+            }
+
+            .price-badge {
+                align-self: flex-start;
+            }
+
+            .gallery-main {
+                height: 300px;
+            }
+
+            .gallery-thumbnails {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+
+            .detail-header h1 {
+                font-size: 24px;
+            }
+
+            .add-to-cart-section {
+                position: static;
+            }
+
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-container);
+            color: white;
+            padding: 80px 24px 24px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            font-size: 14px;
+            color: var(--on-primary-container);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-container);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: var(--on-primary-container);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: var(--on-primary-container);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: white;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-200/20 shadow-[0px_10px_30px_rgba(0,23,45,0.05)]" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-[1280px] mx-auto">
+    <a href="index-new.html" class="text-2xl font-black tracking-tighter text-slate-900" style="text-decoration:none;font-family:'Manrope',sans-serif;">Cerim.cg</a>
+    <div class="hidden md:flex gap-8 items-center">
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="index-new.html" style="font-family:'Manrope',sans-serif;">Accueil</a>
+    <a class="text-sm font-bold tracking-tight text-emerald-700 pb-1 border-b-2 border-emerald-700" href="galerie.html" style="font-family:'Manrope',sans-serif;">Galerie</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="panier.html" style="font-family:'Manrope',sans-serif;">Panier</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="#" style="font-family:'Manrope',sans-serif;">À propos</a>
+    <a class="text-sm font-medium tracking-tight text-slate-600 hover:text-emerald-700 transition-colors" href="contact.html" style="font-family:'Manrope',sans-serif;">Contact</a>
+    </div>
+    <button class="text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform" style="background-color:#051d33;font-family:'Manrope',sans-serif;">Publier un bien</button>
+    </div>
+    </nav>
+
+    <main class="detail-container">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="galerie.html">Galerie</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="galerie.html?type=villas">Villas</a>
+                <span class="breadcrumb-separator">/</span>
+                <span>Villa Impériale Côte Sauvage</span>
+            </div>
+
+            <!-- Gallery Section -->
+            <div class="gallery-section">
+                <div class="gallery-main">
+                    <img id="mainImage" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&h=600&fit=crop" alt="Villa principale"/>
+                </div>
+                <div class="gallery-thumbnails">
+                    <div class="gallery-thumb active" onclick="changeImage(this)">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&h=100&fit=crop" alt="Image 1"/>
+                    </div>
+                    <div class="gallery-thumb" onclick="changeImage(this)">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=120&h=100&fit=crop" alt="Image 2"/>
+                    </div>
+                    <div class="gallery-thumb" onclick="changeImage(this)">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&h=100&fit=crop" alt="Image 3"/>
+                    </div>
+                    <div class="gallery-thumb" onclick="changeImage(this)">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=120&h=100&fit=crop" alt="Image 4"/>
+                    </div>
+                    <div class="gallery-thumb" onclick="changeImage(this)">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&h=100&fit=crop" alt="Image 5"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="property-details">
+                    <!-- Header -->
+                    <div class="detail-header">
+                        <div class="detail-title-section">
+                            <div class="property-location">
+                                <span class="material-symbols-outlined">location_on</span>
+                                Pointe-Noire, Congo
+                            </div>
+                            <h1>Villa Impériale Côte Sauvage</h1>
+                            <span class="property-type">Villa de Luxe</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price-badge">Achat</span>
+                            <div class="property-price">480.000.000<br/><span style="font-size: 16px; font-weight: 500;">FCFA</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div>
+                        <p style="color: var(--on-surface-variant); line-height: 1.8;">
+                            <strong>Adresse complète :</strong><br/>
+                            Avenue de la Côte Sauvage, Quartier Haut de la Ville, Pointe-Noire, Congo
+                        </p>
+                    </div>
+
+                    <!-- Specifications -->
+                    <div class="specs-section">
+                        <div class="specs-title">Caractéristiques Principales</div>
+                        <div class="specs-grid">
+                            <div class="spec-card">
+                                <span class="material-symbols-outlined spec-card-icon">bed</span>
+                                <span class="spec-card-label">Chambres</span>
+                                <span class="spec-card-value">5</span>
+                            </div>
+                            <div class="spec-card">
+                                <span class="material-symbols-outlined spec-card-icon">chair</span>
+                                <span class="spec-card-label">Salons</span>
+                                <span class="spec-card-value">2</span>
+                            </div>
+                            <div class="spec-card">
+                                <span class="material-symbols-outlined spec-card-icon">bathtub</span>
+                                <span class="spec-card-label">Salles de bain</span>
+                                <span class="spec-card-value">4</span>
+                            </div>
+                            <div class="spec-card">
+                                <span class="material-symbols-outlined spec-card-icon">square_foot</span>
+                                <span class="spec-card-label">Superficie</span>
+                                <span class="spec-card-value">520m²</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Measurements -->
+                    <div class="measurements-section">
+                        <h2>Mesures Exactes</h2>
+                        <div class="measurements-grid">
+                            <div class="measurement-item">
+                                <div class="measurement-label">Surface Habitable</div>
+                                <div class="measurement-value">520 m²</div>
+                            </div>
+                            <div class="measurement-item">
+                                <div class="measurement-label">Terrain</div>
+                                <div class="measurement-value">1.200 m²</div>
+                            </div>
+                            <div class="measurement-item">
+                                <div class="measurement-label">Hauteur sous Plafond</div>
+                                <div class="measurement-value">3,5 m</div>
+                            </div>
+                            <div class="measurement-item">
+                                <div class="measurement-label">Terrasse</div>
+                                <div class="measurement-value">150 m²</div>
+                            </div>
+                            <div class="measurement-item">
+                                <div class="measurement-label">Piscine</div>
+                                <div class="measurement-value">40 m²</div>
+                            </div>
+                            <div class="measurement-item">
+                                <div class="measurement-label">Garage</div>
+                                <div class="measurement-value">80 m²</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="description-section">
+                        <h2>Description du Bien</h2>
+                        <p class="description-text">
+                            Cette villa exceptionnelle offre une vue panoramique spectaculaire sur l'océan Atlantique. 
+                            Construite en 2022, elle combine le design moderne avec l'élégance classique congolaise. 
+                            Dotée de matériaux haut de gamme, elle dispose d'une domotique complète, d'un système de 
+                            sécurité avant-garde et d'une efficacité énergétique optimale. La propriété inclut un 
+                            ascenseur privé, une cave à vin climatisée et une salle de cinéma.
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="features-section">
+                        <h2>Équipements et Services</h2>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">pool</span>
+                                <span>Piscine privée</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">airplanemode_active</span>
+                                <span>Climatisation</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">security</span>
+                                <span>Système de sécurité</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">garden</span>
+                                <span>Jardin aménagé</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">directions_car</span>
+                                <span>Garage double</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">bolt</span>
+                                <span>Domotique</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">visibility</span>
+                                <span>Vue sur mer</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="material-symbols-outlined">home_repair_service</span>
+                                <span>Ascenseur privé</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Add to Cart -->
+                    <div class="add-to-cart-section">
+                        <h3>Ajouter au Panier</h3>
+                        <div class="price-summary">
+                            <div class="price-row">
+                                <span>Prix du bien :</span>
+                                <span>480.000.000 FCFA</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Frais d'agence :</span>
+                                <span>+ 2%</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total :</span>
+                                <span>489.600.000 FCFA</span>
+                            </div>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart()">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            Ajouter au Panier
+                        </button>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="contact-card">
+                        <h3>Agent Immobilier</h3>
+                        <div class="agent-info">
+                            <div class="agent-avatar">👨</div>
+                            <div class="agent-details">
+                                <h4>Jean Dupont</h4>
+                                <p>Expert Immobilier</p>
+                                <p style="font-size: 11px; margin-top: 4px;">+242 06 123 45 67</p>
+                            </div>
+                        </div>
+                        <div class="contact-buttons">
+                            <button class="btn-contact" onclick="contactAgent('phone')">
+                                <span class="material-symbols-outlined">call</span>
+                                Appeler
+                            </button>
+                            <button class="btn-contact" onclick="contactAgent('whatsapp')">
+                                <span class="material-symbols-outlined">chat</span>
+                                WhatsApp
+                            </button>
+                            <button class="btn-contact" onclick="contactAgent('email')">
+                                <span class="material-symbols-outlined">mail</span>
+                                Email
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Share Section -->
+                    <div class="share-section">
+                        <h3>Partager</h3>
+                        <div class="share-buttons">
+                            <button class="share-btn" title="Facebook" onclick="shareProperty('facebook')">
+                                <span class="material-symbols-outlined">share</span>
+                            </button>
+                            <button class="share-btn" title="Twitter" onclick="shareProperty('twitter')">
+                                <span class="material-symbols-outlined">share</span>
+                            </button>
+                            <button class="share-btn" title="WhatsApp" onclick="shareProperty('whatsapp')">
+                                <span class="material-symbols-outlined">share</span>
+                            </button>
+                            <button class="share-btn" title="Copier le lien" onclick="shareProperty('copy')">
+                                <span class="material-symbols-outlined">link</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de Page (Footer) -->
+    <footer class="w-full pt-20 pb-10 bg-slate-950 border-t border-slate-800">
+    <div class="max-w-[1280px] mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div>
+    <span class="text-xl font-bold text-white mb-4 block" style="font-family:'Manrope',sans-serif;">Cerim.cg</span>
+    <p class="text-sm leading-relaxed text-slate-400" style="font-family:'Manrope',sans-serif;">La référence de l'immobilier premium au Congo. Sécurité, élégance et transparence.</p>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Navigation</h4>
+    <ul class="space-y-4">
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Accueil</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Galerie</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="galerie.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Acheter</a></li>
+    </ul>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Liens Utiles</h4>
+    <ul class="space-y-4">
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="index-new.html#agents" style="font-family:'Manrope',sans-serif;text-decoration:none;">Agents</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="#" style="font-family:'Manrope',sans-serif;text-decoration:none;">À propos</a></li>
+    <li><a class="text-sm text-slate-500 hover:text-emerald-400 transition-all underline-offset-4 hover:underline" href="contact.html" style="font-family:'Manrope',sans-serif;text-decoration:none;">Contact</a></li>
+    </ul>
+    </div>
+    <div>
+    <h4 class="text-white font-semibold mb-6" style="font-family:'Manrope',sans-serif;">Newsletter</h4>
+    <p class="text-sm text-slate-400 mb-4" style="font-family:'Manrope',sans-serif;">Recevez les dernières opportunités.</p>
+    <div class="flex">
+    <input class="bg-slate-900 border-none rounded-l-lg px-4 py-2 w-full text-white text-sm focus:ring-1 focus:ring-emerald-400" placeholder="Votre email" type="email" style="font-family:'Manrope',sans-serif;"/>
+    <button class="bg-emerald-600 text-white px-4 py-2 rounded-r-lg"><span class="material-symbols-outlined">send</span></button>
+    </div>
+    </div>
+    </div>
+    <div class="max-w-[1280px] mx-auto px-8 mt-20 pt-10 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-sm leading-relaxed text-slate-400" style="font-family:'Manrope',sans-serif;">© 2026 Cerim.cg. Tous droits réservés.</p>
+    <div class="flex gap-6">
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+    <a class="text-slate-500 hover:text-white" href="#"><span class="material-symbols-outlined">share</span></a>
+    </div>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let activeProperty = null;
+
+        function setText(selector, value) {
+            const element = document.querySelector(selector);
+            if (element) element.textContent = value;
+        }
+
+        function renderPriceSummary(property) {
+            const summary = document.querySelector('.price-summary');
+            if (!summary) return;
+
+            const isRental = property.transaction === 'Location';
+            const fee = isRental ? Math.round(property.price * 0.1) : Math.round(property.price * 0.02);
+            const total = property.price + fee;
+
+            summary.innerHTML = `
+                <div class="price-row">
+                    <span>${isRental ? 'Loyer mensuel :' : 'Prix du bien :'}</span>
+                    <span>${property.priceLabel}</span>
+                </div>
+                <div class="price-row">
+                    <span>${isRental ? 'Frais de service :' : "Frais d'agence :"}</span>
+                    <span>${CerimData.formatPrice(fee)}</span>
+                </div>
+                <div class="price-row total">
+                    <span>Total estimé :</span>
+                    <span>${CerimData.formatPrice(total)}</span>
+                </div>
+            `;
+        }
+
+        function renderMeasurements(property) {
+            const grid = document.querySelector('.measurements-grid');
+            if (!grid) return;
+
+            const rows = [
+                ['Surface habitable', `${property.surface} m²`],
+                ['Terrain', property.land ? `${property.land} m²` : null],
+                ['Hauteur sous plafond', property.ceiling],
+                ['Terrasse', property.terrace ? `${property.terrace} m²` : null],
+                ['Piscine', property.pool ? `${property.pool} m²` : null],
+                ['Garage', property.garage ? `${property.garage} m²` : null]
+            ].filter((row) => row[1]);
+
+            grid.innerHTML = rows.map(([label, value]) => `
+                <div class="measurement-item">
+                    <div class="measurement-label">${label}</div>
+                    <div class="measurement-value">${value}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderFeatures(property) {
+            const list = document.querySelector('.features-list');
+            if (!list) return;
+
+            list.innerHTML = property.features.map(([icon, label]) => `
+                <div class="feature-item">
+                    <span class="material-symbols-outlined">${icon}</span>
+                    <span>${label}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderGallery(property) {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelector('.gallery-thumbnails');
+            if (!mainImage || !thumbnails) return;
+
+            mainImage.src = property.images[0];
+            mainImage.alt = property.title;
+            thumbnails.innerHTML = property.images.map((image, index) => `
+                <div class="gallery-thumb ${index === 0 ? 'active' : ''}" data-large="${image}" onclick="changeImage(this)">
+                    <img src="${image}" alt="${property.title} - image ${index + 1}"/>
+                </div>
+            `).join('');
+        }
+
+        function renderSpecs(property) {
+            const values = [
+                property.bedrooms,
+                property.livingRooms,
+                property.bathrooms,
+                `${property.surface}m²`
+            ];
+
+            document.querySelectorAll('.spec-card-value').forEach((element, index) => {
+                element.textContent = values[index] || '-';
+            });
+        }
+
+        function updateCartButton() {
+            const button = document.querySelector('.btn-add-cart');
+            if (!button || !activeProperty) return;
+
+            const alreadySaved = CerimData.readCart().some((item) => item.id === activeProperty.id);
+            button.innerHTML = alreadySaved
+                ? '<span class="material-symbols-outlined">check_circle</span> Déjà dans le panier'
+                : '<span class="material-symbols-outlined">shopping_cart</span> Ajouter au panier';
+        }
+
+        function renderPropertyDetail(property) {
+            activeProperty = property;
+            document.title = `${property.title} | Cerim.cg`;
+
+            const breadcrumb = document.querySelector('.breadcrumb');
+            if (breadcrumb) {
+                breadcrumb.innerHTML = `
+                    <a href="galerie.html">Galerie</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="galerie.html?type=${property.type.toLowerCase()}">${property.type}</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>${property.title}</span>
+                `;
+            }
+
+            renderGallery(property);
+
+            const locationElement = document.querySelector('.property-location');
+            if (locationElement) {
+                locationElement.innerHTML = '<span class="material-symbols-outlined">location_on</span>' + `${property.location}, Congo`;
+            }
+
+            setText('.detail-header h1', property.title);
+            setText('.property-type', property.type);
+            setText('.price-badge', property.transaction);
+            setText('.detail-header .property-price', property.priceLabel);
+
+            const addressBlock = document.querySelector('.detail-header + div p');
+            if (addressBlock) {
+                addressBlock.innerHTML = `<strong>Adresse complète :</strong><br/>${property.address}`;
+            }
+
+            renderSpecs(property);
+            renderMeasurements(property);
+            setText('.description-text', property.description);
+            renderFeatures(property);
+            renderPriceSummary(property);
+
+            const avatar = document.querySelector('.agent-avatar');
+            if (avatar) avatar.textContent = CerimData.initials(property.agent.name);
+            setText('.agent-details h4', property.agent.name);
+            const agentLines = document.querySelectorAll('.agent-details p');
+            if (agentLines[0]) agentLines[0].textContent = property.agent.role;
+            if (agentLines[1]) agentLines[1].textContent = property.agent.phone.replace(/(\+\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+
+            updateCartButton();
+        }
+
+        function changeImage(element) {
+            document.querySelectorAll('.gallery-thumb').forEach((thumb) => thumb.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('mainImage').src = element.dataset.large;
+        }
+
+        function addToCart() {
+            if (!activeProperty) return;
+
+            const result = CerimData.addToCart(activeProperty.id);
+            updateCartButton();
+
+            if (result.added) {
+                const goToCart = confirm('Bien ajouté au panier. Voulez-vous ouvrir votre sélection ?');
+                if (goToCart) window.location.href = 'panier.html';
+            } else {
+                alert('Ce bien est déjà dans votre panier.');
+            }
+        }
+
+        function contactAgent(method) {
+            if (!activeProperty) return;
+
+            const agent = activeProperty.agent;
+            switch(method) {
+                case 'phone':
+                    window.location.href = `tel:${agent.phone}`;
+                    break;
+                case 'whatsapp':
+                    window.location.href = `https://wa.me/${agent.phone.replace('+', '')}`;
+                    break;
+                case 'email':
+                    window.location.href = `mailto:${agent.email}`;
+                    break;
+            }
+        }
+
+        function shareProperty(platform) {
+            if (!activeProperty) return;
+
+            const url = window.location.href;
+            const text = `Découvrez ${activeProperty.title} sur Cerim.cg - ${activeProperty.priceLabel}`;
+
+            switch(platform) {
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+                    break;
+                case 'twitter':
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
+                    break;
+                case 'whatsapp':
+                    window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`);
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(url);
+                    alert('Lien copié dans le presse-papiers.');
+                    break;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPropertyDetail(CerimData.getPropertyFromUrl());
+        });
+    </script>
+</body>
+</html>
